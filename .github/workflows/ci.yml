@@ -1,16 +1,16 @@
-name: Laravel CI/CD with Docker
+name: Laravel CI with Docker
 
 on:
   push:
     branches:
-      - main  # `main` にプッシュされたら実行
+      - main
   pull_request:
     branches:
-      - main  # PR 作成時にも実行
+      - main
 
 jobs:
   test:
-    runs-on: ubuntu-latest  # GitHub のクラウド環境で実行
+    runs-on: ubuntu-latest
 
     services:
       mysql:
@@ -27,10 +27,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Docker
+      - name: Set up environment variables
         run: |
-          docker -v
-          docker-compose -v
+          echo "DB_CONNECTION=${{ secrets.DB_CONNECTION }}" >> .env
+          echo "DB_HOST=${{ secrets.DB_HOST }}" >> .env
+          echo "DB_PORT=${{ secrets.DB_PORT }}" >> .env
+          echo "DB_DATABASE=${{ secrets.DB_DATABASE }}" >> .env
+          echo "DB_USERNAME=${{ secrets.DB_USERNAME }}" >> .env
+          echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
 
       - name: Build Docker containers
         run: docker-compose up -d --build
@@ -43,24 +47,3 @@ jobs:
 
       - name: Tear down Docker containers
         run: docker-compose down
-
-  build-and-push:
-    needs: test  # テストが成功した場合のみ実行
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Login to GitHub Container Registry
-        run: echo "${{ secrets.GITHUB_PAT }}" | docker login ghcr.io -u ${{ secrets.GITHUB_USERNAME }} --password-stdin
-
-      - name: Build and tag Docker image
-        run: |
-          docker build -t ghcr.io/${{ secrets.GITHUB_USERNAME }}/laravel-app:latest .
-          docker tag ghcr.io/${{ secrets.GITHUB_USERNAME }}/laravel-app:latest ghcr.io/${{ secrets.GITHUB_USERNAME }}/laravel-app:${{ github.sha }}
-
-      - name: Push Docker image to GitHub Container Registry
-        run: |
-          docker push ghcr.io/${{ secrets.GITHUB_USERNAME }}/laravel-app:latest
-          docker push ghcr.io/${{ secrets.GITHUB_USERNAME }}/laravel-app:${{ github.sha }}
