@@ -8,6 +8,9 @@ services:
       context: .
       dockerfile: ./infra/docker/php/Dockerfile
       target: ${APP_BUILD_TARGET:-development}
+    depends_on:
+      - db
+      - test-db
     volumes:
       - type: bind
         source: ./src
@@ -79,5 +82,3 @@ services:
       - MYSQL_DATABASE=testing
       - MYSQL_USER=testuser
       - MYSQL_PASSWORD=testpass
-    ports:
-      - "3307:3306"
