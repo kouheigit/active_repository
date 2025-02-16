@@ -1,0 +1,66 @@
+name: Laravel CI/CD with Docker
+
+on:
+  push:
+    branches:
+      - main  # `main` にプッシュされたら実行
+  pull_request:
+    branches:
+      - main  # PR 作成時にも実行
+
+jobs:
+  test:
+    runs-on: ubuntu-latest  # GitHub のクラウド環境で実行
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: testing
+          MYSQL_USER: testuser
+          MYSQL_PASSWORD: testpass
+        ports:
+          - 3306:3306
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Docker
+        run: |
+          docker -v
+          docker-compose -v
+
+      - name: Build Docker containers
+        run: docker-compose up -d --build
+
+      - name: Run Laravel migrations
+        run: docker-compose exec app php artisan migrate --force
+
+      - name: Run PHPUnit tests
+        run: docker-compose exec app php artisan test
+
+      - name: Tear down Docker containers
+        run: docker-compose down
+
+  build-and-push:
+    needs: test  # テストが成功した場合のみ実行
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Login to GitHub Container Registry
+        run: echo "${{ secrets.GITHUB_PAT }}" | docker login ghcr.io -u ${{ secrets.GITHUB_USERNAME }} --password-stdin
+
+      - name: Build and tag Docker image
+        run: |
+          docker build -t ghcr.io/${{ secrets.GITHUB_USERNAME }}/laravel-app:latest .
+          docker tag ghcr.io/${{ secrets.GITHUB_USERNAME }}/laravel-app:latest ghcr.io/${{ secrets.GITHUB_USERNAME }}/laravel-app:${{ github.sha }}
+
+      - name: Push Docker image to GitHub Container Registry
+        run: |
+          docker push ghcr.io/${{ secrets.GITHUB_USERNAME }}/laravel-app:latest
+          docker push ghcr.io/${{ secrets.GITHUB_USERNAME }}/laravel-app:${{ github.sha }}
