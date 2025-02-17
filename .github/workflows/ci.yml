@@ -37,7 +37,7 @@ jobs:
           echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> .env
 
       - name: Build Docker containers
-        run: docker-compose up -d --build
+        run: docker compose up -d --build
 
       - name: Run Laravel migrations
         run: docker-compose exec app php artisan migrate --force
