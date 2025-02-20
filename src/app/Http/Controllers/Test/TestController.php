@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Test;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class TestController extends Controller
@@ -9,9 +10,16 @@ class TestController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    /*
+     *   public function index()
     {
-        //
+        $testform = Testform::all();
+        return view('admin.testform',compact('testform'));
+    }
+     */
+    public function index(Request $request)
+    {
+        return view('test.index');
     }
 
     /**
