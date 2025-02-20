@@ -12,8 +12,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('test',[App\Http\Controllers\Test\TestController::class, 'index'])->name('test.index');
-
+Route::namespace('Test')->name('test.')->group(function() {
+    Route::get('test', [App\Http\Controllers\Test\TestController::class, 'index'])->name('test.index');
+});
 Route::get('/', function () {
     return view('welcome');
 });
