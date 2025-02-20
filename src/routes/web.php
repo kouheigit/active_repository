@@ -16,3 +16,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::namespace('Sample')->prefix('sample')->name('sample.')->group(function(){
+
+});
+/*
+Route::namespace('Top')->prefix('top')->name('top.')->group(function() {
+    Route::get('top',[App\Http\Controllers\Top\TopController::class,'index'])->name('top');
+    //Route::get('top',[App\Http\Controllers\Top\TopController::class,'index'])->name('top')->middleware('auth');
+
+    Route::get('information',[App\Http\Controllers\Top\TopController::class,'information'])->name('information');
+});*/
