@@ -19,6 +19,7 @@ class TestController extends Controller
      */
     public function index(Request $request)
     {
+        //test
         return view('test.index');
     }
 
