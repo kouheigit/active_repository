@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::namespace('Test')->name('test.')->group(function() {
     Route::get('test', [App\Http\Controllers\Test\TestController::class, 'index'])->name('test.index');
+    Route::get('create', [App\Http\Controllers\Test\TestController::class, 'create'])->name('test.create');
 });
 Route::get('/', function () {
     return view('welcome');
