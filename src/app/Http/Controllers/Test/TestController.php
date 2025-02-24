@@ -28,6 +28,7 @@ class TestController extends Controller
      */
     public function create()
     {
+        return redirect('test.index');
         //
     }
 
