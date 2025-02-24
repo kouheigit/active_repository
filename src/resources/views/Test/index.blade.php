@@ -9,5 +9,6 @@
 @endforeach
 
 <form method="GET" action="{{ route('test.addvalue') }}">
-
+   {{--<input type="text" class="tax" id="tax" name="tax" value="{{old("tax")}}">--}}--}}
 </form>
+<input type="submit" />
