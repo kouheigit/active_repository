@@ -10,9 +10,12 @@
 
 <form method="GET" action="{{ route('test.create') }}">
     @csrf
+    <p>タイトル</p>
    <input type="text" class="title" id="title" name="title" value="{{old("title")}}">
+    <p>名前</p>
     <input type="text" class="name" id="name" name="name" value="{{old("name")}}">
-    <input type="textarea" class="comment" id="comment" name="comment" value="{{old("comment")}}">
+    <p>コメント</p>
+    <textarea name="comment"class="comment" id="comment" cols="30" rows="10" value="{{old("comment")}}"></textarea>
     <input type="submit" />
 </form>
 

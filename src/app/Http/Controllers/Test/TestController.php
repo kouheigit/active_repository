@@ -28,7 +28,7 @@ class TestController extends Controller
      */
     public function create(Request $request)
     {
-        return redirect('test.index');
+        return redirect('test');
         //
     }
 
