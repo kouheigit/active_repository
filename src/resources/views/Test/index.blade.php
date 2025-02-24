@@ -8,7 +8,7 @@
     <li>{{ $error }}</li>
 @endforeach
 
-<form method="GET" action="{{ route('test.create') }}">
+<form method="GET" action="{{ route('create') }}">
    <input type="text" class="title" id="title" name="title" value="{{old("title")}}">
     <input type="text" class="name" id="name" name="name" value="{{old("name")}}">
     <input type="textarea" class="comment" id="comment" name="comment" value="{{old("name")}}">
