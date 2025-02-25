@@ -28,6 +28,10 @@ class TestController extends Controller
      */
     public function create(Request $request)
     {
+        $title = $request->input('title');
+        $name = $request->input('name');
+        $comment = $request->input('comment');
+
         return redirect('test');
         //
     }
