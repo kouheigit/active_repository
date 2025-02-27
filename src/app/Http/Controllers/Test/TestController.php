@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Test;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\TestValidationRequest;
 use Illuminate\Http\Request;
 
 class TestController extends Controller
@@ -26,8 +27,10 @@ class TestController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Request $request)
+    public function create(TestValidationRequest $request)
     {
+        //$validated = $request->validated();
+
         $title = $request->input('title');
         $name = $request->input('name');
         $comment = $request->input('comment');
