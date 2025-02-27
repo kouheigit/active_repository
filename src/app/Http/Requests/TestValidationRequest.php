@@ -11,7 +11,7 @@ class TestValidationRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,15 @@ class TestValidationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'comment'=>['request','string','max:300'],
+        ];
+    }
+    public function messages(): array
+    {
+        return [
+            'comment.require'=>'コメントを入力してください',
+            'commnet.string'=>'コメントは文字列で入力してください',
+            'comment.max'=>'コメントは300文字以内にしてください',
         ];
     }
 }
