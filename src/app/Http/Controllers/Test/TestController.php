@@ -20,7 +20,7 @@ class TestController extends Controller
      */
     public function index(Request $request)
     {
-        //test
+        //データ一覧を表示する
         return view('test.index');
     }
 
@@ -29,6 +29,14 @@ class TestController extends Controller
      */
     public function create(TestValidationRequest $request)
     {
+        return view('test.index');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function store(TestValidationRequest $request)
+    {
         $validated = $request->validated();
 
         $title = $request->input('title');
@@ -36,15 +44,6 @@ class TestController extends Controller
         $comment = $request->input('comment');
 
         return redirect('test');
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**

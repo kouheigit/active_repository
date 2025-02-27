@@ -8,7 +8,7 @@
     <li>{{ $error }}</li>
 @endforeach
 
-<form method="GET" action="{{ route('test.create') }}">
+<form method="GET" action="{{ route('test.store') }}">
     @csrf
     <p>タイトル</p>
    <input type="text" class="title" id="title" name="title" value="{{old("title")}}">
