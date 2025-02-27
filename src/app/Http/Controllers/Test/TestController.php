@@ -29,7 +29,7 @@ class TestController extends Controller
      */
     public function create(TestValidationRequest $request)
     {
-        //$validated = $request->validated();
+        $validated = $request->validated();
 
         $title = $request->input('title');
         $name = $request->input('name');

@@ -22,7 +22,7 @@ class TestValidationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'comment'=>['request','string','max:300'],
+            'comment'=>['required','string','max:300'],
         ];
     }
     public function messages(): array
