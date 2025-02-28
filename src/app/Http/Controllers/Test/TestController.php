@@ -32,16 +32,27 @@ class TestController extends Controller
     {
 
 
-
         $validated = $request->validated();
         $title = $request->input('title');
         $name = $request->input('name');
         $comment = $request->input('comment');
         $image = $request->input('image');
 
-        if(isset($image)){
-            echo"天才";
+
+        if ($request->hasFile('image')) {
+            // ファイル名をユニークにする
+            $fileName = time() . '_' . $request->file('image')->getClientOriginalName();
+
+            // public/images に保存
+            $request->file('image')->move(public_path('images'), $fileName);
+
+            // 画像のURLを取得
+            $imageUrl = asset('images/' . $fileName);
+
+            return back()->with('success', '画像がアップロードされました！')->with('image_url', $imageUrl);
         }
+        return back()->with('error', '画像のアップロードに失敗しました。');
+
         return redirect('test');
     }
 
