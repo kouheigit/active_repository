@@ -38,29 +38,15 @@ class TestController extends Controller
         $comment = $request->input('comment');
         $image = $request->input('image');
 
-
         if ($request->hasFile('image')) {
-            // ファイル名をユニークにする
-            $fileName = time() . '_' . $request->file('image')->getClientOriginalName();
-
-            // public/images に保存
-            $request->file('image')->move(public_path('images'), $fileName);
-
-            // 画像のURLを取得
-
-            $imageUrl = asset('images/' . $fileName);
-
-            return back()->with('success', '画像がアップロードされました！')->with('image_url', $imageUrl);
+            return $this->imgupdate($request);
         }
-        return back()->with('error', '画像のアップロードに失敗しました。');
-
         return redirect('test');
     }
 
     public function imgupdate(Request $request)
     {
         $fileName = time() . '_' . $request->file('image')->getClientOriginalName();
-
         $request->file('image')->move(public_path('images'),$fileName);
     }
     /**
