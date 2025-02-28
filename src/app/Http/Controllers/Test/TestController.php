@@ -36,12 +36,12 @@ class TestController extends Controller
         $title = $request->input('title');
         $name = $request->input('name');
         $comment = $request->input('comment');
-
-
+        $fileName = null;
         if ($request->hasFile('image')) {
             $fileName = time() . '_' . $request->file('image')->getClientOriginalName();
             $request->file('image')->move(public_path('images'),$fileName);
         }
+
         return redirect('test');
     }
 
