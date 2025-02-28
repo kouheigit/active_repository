@@ -11,13 +11,6 @@ class TestController extends Controller
     /**
      * Display a listing of the resource.
      */
-    /*
-     *   public function index()
-    {
-        $testform = Testform::all();
-        return view('admin.testform',compact('testform'));
-    }
-     */
     public function index(Request $request)
     {
         //データ一覧を表示する
@@ -38,7 +31,6 @@ class TestController extends Controller
     public function store(TestValidationRequest $request)
     {
         $validated = $request->validated();
-
         $title = $request->input('title');
         $name = $request->input('name');
         $comment = $request->input('comment');
