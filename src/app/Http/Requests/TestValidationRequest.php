@@ -25,7 +25,8 @@ class TestValidationRequest extends FormRequest
             'name'=>['required','string','max:20'],
             'title'=>['required','string','max:30'],
             'comment'=>['required','string','max:300'],
-            'image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
+            //画像バリデーション一時除外
+           // 'image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif', 'max:2048'],
         ];
     }
     public function messages(): array

@@ -32,11 +32,13 @@ class TestController extends Controller
     {
 
 
+
         $validated = $request->validated();
         $title = $request->input('title');
         $name = $request->input('name');
         $comment = $request->input('comment');
         $image = $request->input('image');
+
         if(isset($image)){
             echo"天才";
         }
