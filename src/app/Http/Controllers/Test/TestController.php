@@ -36,19 +36,15 @@ class TestController extends Controller
         $title = $request->input('title');
         $name = $request->input('name');
         $comment = $request->input('comment');
-        $image = $request->input('image');
+
 
         if ($request->hasFile('image')) {
-            return $this->imgupdate($request);
+            $fileName = time() . '_' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->move(public_path('images'),$fileName);
         }
         return redirect('test');
     }
 
-    public function imgupdate(Request $request)
-    {
-        $fileName = time() . '_' . $request->file('image')->getClientOriginalName();
-        $request->file('image')->move(public_path('images'),$fileName);
-    }
     /**
      * Display the specified resource.
      */
