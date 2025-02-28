@@ -30,6 +30,8 @@ class TestController extends Controller
      */
     public function store(TestValidationRequest $request)
     {
+        dd($request);
+
         $validated = $request->validated();
         $title = $request->input('title');
         $name = $request->input('name');
