@@ -47,6 +47,7 @@ class TestController extends Controller
             $request->file('image')->move(public_path('images'), $fileName);
 
             // 画像のURLを取得
+
             $imageUrl = asset('images/' . $fileName);
 
             return back()->with('success', '画像がアップロードされました！')->with('image_url', $imageUrl);
@@ -56,6 +57,12 @@ class TestController extends Controller
         return redirect('test');
     }
 
+    public function imgupdate(Request $request)
+    {
+        $fileName = time() . '_' . $request->file('image')->getClientOriginalName();
+
+        $request->file('image')->move(public_path('images'),$fileName);
+    }
     /**
      * Display the specified resource.
      */

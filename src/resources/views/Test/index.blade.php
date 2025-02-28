@@ -15,7 +15,7 @@
     <p>名前</p>
     <input type="text" class="name" id="name" name="name" value="{{old("name")}}">
     <p>コメント</p>
-    <textarea name="comment"class="comment" id="comment" cols="30" rows="10">"{{old("comment")}}"</textarea>
+    <textarea name="comment"class="comment" id="comment" cols="30" rows="10">{{old("comment")}}</textarea>
     <p>画像</p>
     <input type="file" id="image" name="image">
     <input type="submit" />
