@@ -40,8 +40,6 @@ class TestController extends Controller
         if(isset($image)){
             echo"天才";
         }
-
-
         return redirect('test');
     }
 
