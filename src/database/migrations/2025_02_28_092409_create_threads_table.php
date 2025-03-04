@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('threads', function (Blueprint $table) {
             $table->id();
+            $table->string("title")->nullable();
+            $table->string('name')->nullable();
+            $table->longText("comment")->nullable();
+            $table->string('filename')->nullable();
             $table->timestamps();
         });
     }
