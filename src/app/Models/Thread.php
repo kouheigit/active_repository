@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Thread extends Model
 {
     use HasFactory;
-    protected $fillable = ['name','title', 'comment','$image_title'];
+    protected $fillable = ['name','title', 'comment','fileName'];
 }
