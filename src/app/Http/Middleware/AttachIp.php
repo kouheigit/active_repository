@@ -16,6 +16,9 @@ class AttachIp
     public function handle(Request $request, Closure $next): Response
     {
         $ip = $_SERVER['REMOTE_ADDR'];
+        $userAgent = $_SERVER['HTTP_USER_AGENT'];
+        $host = gethostbyaddr($ip);
+
         return $next($request);
     }
 }
