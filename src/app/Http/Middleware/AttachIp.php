@@ -15,6 +15,7 @@ class AttachIp
      */
     public function handle(Request $request, Closure $next): Response
     {
+        $ip = $_SERVER['REMOTE_ADDR'];
         return $next($request);
     }
 }
