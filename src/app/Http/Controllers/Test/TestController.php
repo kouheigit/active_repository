@@ -15,7 +15,7 @@ class TestController extends Controller
      */
     public function index(Request $request)
     {
-        $All_value = Thread::all();
+        $threads = Thread::all();
         //データ一覧を表示する
         // return view('admin.testform',compact('testform'));
         return view('test.index');
