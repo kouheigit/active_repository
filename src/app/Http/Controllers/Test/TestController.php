@@ -42,7 +42,8 @@ class TestController extends Controller
             $fileName = time() . '_' . $request->file('image')->getClientOriginalName();
             $request->file('image')->move(public_path('images'),$fileName);
         }
-        
+        $insert_list = [$title,$name,$comment, $fileName];
+
         /*
          *    //Bm_list
         for($i=0; $i<14; $i++){
