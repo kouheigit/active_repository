@@ -39,21 +39,21 @@ class TestController extends Controller
         $title = $request->input('title');
         $name = $request->input('name');
         $comment = $request->input('comment');
-        $fileName = null;
+        $imageFileName = null;
 
         if ($request->hasFile('image')) {
-            $fileName = time() . '_' . $request->file('image')->getClientOriginalName();
-            $request->file('image')->move(public_path('images'),$fileName);
+            $imageFileName = time() . '_' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->move(public_path('images'),$imageFileName);
         }
-        $insert_list = [
+        $theadData = [
             'title'=>$title,
             'name'=>$name,
             'comment'=>$comment,
-            'fileName'=>$fileName,
+            'fileName'=>$imageFileName,
             'created_at'=> Carbon::now('Asia/Tokyo'),
             'updated_at'=> Carbon::now('Asia/Tokyo'),
             ];
-        Thread::insert($insert_list);
+        Thread::insert($theadData);
         return redirect('test');
     }
 
