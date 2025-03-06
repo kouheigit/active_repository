@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\TestValidationRequest;
 use Illuminate\Http\Request;
 use App\Models\Thread;
+use Illuminate\Support\Carbon;
 
 class TestController extends Controller
 {
@@ -42,7 +43,15 @@ class TestController extends Controller
             $fileName = time() . '_' . $request->file('image')->getClientOriginalName();
             $request->file('image')->move(public_path('images'),$fileName);
         }
-        $insert_list = [$title,$name,$comment, $fileName];
+        $insert_list = ['title'=>$title,
+            'name'=>$name,
+            'comment'=>$comment,
+            'fileName'=>$fileName,
+            'created_at'=> Carbon::now('Asia/Tokyo'),
+            'updated_at'=> Carbon::now('Asia/Tokyo'),
+            ];
+        Thread::insert($insert_list);
+       // Billingmanagement_list::insert($inset_list);
 
         /*
          *    //Bm_list
