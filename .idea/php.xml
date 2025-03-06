@@ -114,6 +114,19 @@
       <path value="$PROJECT_DIR$/src/vendor/psr/http-client" />
       <path value="$PROJECT_DIR$/src/vendor/psr/container" />
       <path value="$PROJECT_DIR$/src/vendor/composer" />
+      <path value="$PROJECT_DIR$/src/vendor/dragon-code/pretty-array" />
+      <path value="$PROJECT_DIR$/src/vendor/dragon-code/contracts" />
+      <path value="$PROJECT_DIR$/src/vendor/dragon-code/support" />
+      <path value="$PROJECT_DIR$/src/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/src/vendor/laravel-lang/native-locale-names" />
+      <path value="$PROJECT_DIR$/src/vendor/laravel-lang/lang" />
+      <path value="$PROJECT_DIR$/src/vendor/laravel-lang/publisher" />
+      <path value="$PROJECT_DIR$/src/vendor/laravel-lang/native-country-names" />
+      <path value="$PROJECT_DIR$/src/vendor/laravel-lang/native-currency-names" />
+      <path value="$PROJECT_DIR$/src/vendor/laravel-lang/locales" />
+      <path value="$PROJECT_DIR$/src/vendor/laravel-lang/locale-list" />
+      <path value="$PROJECT_DIR$/src/vendor/laravel-lang/config" />
+      <path value="$PROJECT_DIR$/src/vendor/archtechx/enums" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />

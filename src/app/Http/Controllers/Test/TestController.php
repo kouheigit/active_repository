@@ -15,7 +15,9 @@ class TestController extends Controller
      */
     public function index(Request $request)
     {
+        $All_value = Thread::all();
         //データ一覧を表示する
+        // return view('admin.testform',compact('testform'));
         return view('test.index');
     }
 
@@ -43,7 +45,8 @@ class TestController extends Controller
             $fileName = time() . '_' . $request->file('image')->getClientOriginalName();
             $request->file('image')->move(public_path('images'),$fileName);
         }
-        $insert_list = ['title'=>$title,
+        $insert_list = [
+            'title'=>$title,
             'name'=>$name,
             'comment'=>$comment,
             'fileName'=>$fileName,
@@ -51,32 +54,6 @@ class TestController extends Controller
             'updated_at'=> Carbon::now('Asia/Tokyo'),
             ];
         Thread::insert($insert_list);
-       // Billingmanagement_list::insert($inset_list);
-
-        /*
-         *    //Bm_list
-        for($i=0; $i<14; $i++){
-            if($item[$i]==!null&&$quantity[$i]=!null&&$unit[$i]=!null&&$price[$i]=!null&&$sum[$i]=!null) {
-                $taxation_check = 0;
-                if (isset($taxation[$i])) {
-                    $taxation_check = 1;
-                }
-                $inset_list = [
-                    //Bm_list配列出ない値
-                    'year' => $year,
-                    'number' => $number,
-                    //Bm_list配列の値
-                    'item' => $item[$i],
-                    'quantity' => $quantity[$i],
-                    'unit' => $unit[$i],
-                    'price' => $price[$i],
-                    'sum' => $sum[$i],
-                    'taxation' => $taxation_check,
-                    'created_at' => new Carbon('Asia/Tokyo'),
-                ];
-                Billingmanagement_list::insert($inset_list);
-         */
-        //データベースに収納する処理を追加する
         return redirect('test');
     }
 

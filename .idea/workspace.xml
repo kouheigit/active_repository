@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc314cd3-654f-4bb9-990f-8ce1e8fd5b8f" name="変更" comment="" />
+    <list default="true" id="bc314cd3-654f-4bb9-990f-8ce1e8fd5b8f" name="変更" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/activerepo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/activerepo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/Http/Controllers/Test/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Http/Controllers/Test/TestController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/src/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/app.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,6 +139,19 @@
       <path value="$PROJECT_DIR$/src/vendor/psr/http-client" />
       <path value="$PROJECT_DIR$/src/vendor/psr/container" />
       <path value="$PROJECT_DIR$/src/vendor/composer" />
+      <path value="$PROJECT_DIR$/src/vendor/dragon-code/pretty-array" />
+      <path value="$PROJECT_DIR$/src/vendor/dragon-code/contracts" />
+      <path value="$PROJECT_DIR$/src/vendor/dragon-code/support" />
+      <path value="$PROJECT_DIR$/src/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/src/vendor/laravel-lang/native-locale-names" />
+      <path value="$PROJECT_DIR$/src/vendor/laravel-lang/lang" />
+      <path value="$PROJECT_DIR$/src/vendor/laravel-lang/publisher" />
+      <path value="$PROJECT_DIR$/src/vendor/laravel-lang/native-country-names" />
+      <path value="$PROJECT_DIR$/src/vendor/laravel-lang/native-currency-names" />
+      <path value="$PROJECT_DIR$/src/vendor/laravel-lang/locales" />
+      <path value="$PROJECT_DIR$/src/vendor/laravel-lang/locale-list" />
+      <path value="$PROJECT_DIR$/src/vendor/laravel-lang/config" />
+      <path value="$PROJECT_DIR$/src/vendor/archtechx/enums" />
     </include_path>
   </component>
   <component name="ProjectId" id="2sqOZXmx8Tr9nxuil2R3j1vNkNg" />
@@ -205,7 +226,7 @@
       <workItem from="1741230280273" duration="671000" />
       <workItem from="1741231661095" duration="452000" />
       <workItem from="1741232694167" duration="10000" />
-      <workItem from="1741232989587" duration="3480000" />
+      <workItem from="1741232989587" duration="6349000" />
     </task>
     <servers />
   </component>
