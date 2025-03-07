@@ -15,8 +15,6 @@ class TestController extends Controller
      */
     public function index(Request $request)
     {
-        $userAgent = $request->header('User-Agent');
-        dd($userAgent);
         $threads = Thread::all();
         //データ一覧を表示する
         // return view('admin.testform',compact('testform'));
