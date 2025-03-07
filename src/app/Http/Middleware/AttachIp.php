@@ -22,6 +22,13 @@ class AttachIp
         //ユーザーのIPアドレスが「モバイル回線」なのか「固定回線」なのかを判定する方法として、IPアドレスの範囲やホスト名をチェック
         $host = gethostbyaddr($ip);
 
+        //middlewareからControllerへの値の受け渡し
+        $test_value = "テストバリューの成功です";
+        $request->merge(['test_value' => $test_value]);
+
+
+
+
         return $next($request);
     }
 }
