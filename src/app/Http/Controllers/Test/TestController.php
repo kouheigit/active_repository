@@ -35,9 +35,9 @@ class TestController extends Controller
     public function store(TestValidationRequest $request)
     {
         //middlewareから値を取得してきた↓
-
+/*
         $test_value = $request->input('test_value');
-        dd($test_value);
+        dd($test_value);*/
 
         $validated = $request->validated();
         $title = $request->input('title');
