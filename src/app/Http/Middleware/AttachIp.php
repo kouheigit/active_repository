@@ -55,6 +55,7 @@ class AttachIp
 
         return $_SERVER['REMOTE_ADDR'];
     }
+
     public function handle(Request $request, Closure $next): Response
     {
         /*
@@ -65,11 +66,11 @@ class AttachIp
         ユーザーのIPアドレスが「モバイル回線」なのか「固定回線」なのかを判定する方法として、IPアドレスの範囲やホスト名をチェック
         */
         //$host = gethostbyaddr($ip);
-        $test_value = $this->getuserIp();
+        $ipAddress = $this->getuserIp();
 
         //middlewareからControllerへの値の受け渡し
        // $test_value = "テストバリュー";
-        $request->merge(['test_value' => $test_value]);
+        $request->merge(['ipAddress' => $ipAddress]);
         return $next($request);
     }
 }
