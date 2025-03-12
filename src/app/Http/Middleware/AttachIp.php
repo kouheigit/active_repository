@@ -55,6 +55,12 @@ class AttachIp
 
         return $_SERVER['REMOTE_ADDR'];
     }
+    //ipアドレスからキャリアを割り出す
+    public function gethostName($ip)
+    {
+        return gethostbyaddr($ip);
+
+    }
 
     public function handle(Request $request, Closure $next): Response
     {
@@ -67,10 +73,12 @@ class AttachIp
         */
         //$host = gethostbyaddr($ip);
         $ipAddress = $this->getuserIp();
+        $gethostName = $this->gethostName($ipAddress);
+
 
         //middlewareからControllerへの値の受け渡し
        // $test_value = "テストバリュー";
-        $request->merge(['ipAddress' => $ipAddress]);
+        $request->merge(['ipAddress' => $gethostName]);
         return $next($request);
     }
 }
