@@ -36,7 +36,7 @@ class AttachIp
 
     public function getUserIp()
     {
-
+        //①プロキシ（VPNやCDNなど）を通過した場合に割り出す処理
         if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
             $ipList = explode(',',$_SERVER['HTTP_X_FORWARDED_FOR']);
             foreach($ipList as $ip){
@@ -46,6 +46,14 @@ class AttachIp
                 }
             }
         }
+        //①終了
+
+        //現在は滅多に使用されない処理だがIPを割り出す処理
+        if (!empty($_SERVER['HTTP_CLIENT_IP']) && filter_var($_SERVER['HTTP_CLIENT_IP'], FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE)) {
+            return $_SERVER['HTTP_CLIENT_IP'];
+        }
+
+        return $_SERVER['REMOTE_ADDR'];
     }
     public function handle(Request $request, Closure $next): Response
     {
@@ -57,12 +65,9 @@ class AttachIp
         ユーザーのIPアドレスが「モバイル回線」なのか「固定回線」なのかを判定する方法として、IPアドレスの範囲やホスト名をチェック
         */
         //$host = gethostbyaddr($ip);
-
-        //$userAgent = $this->getUserIp();
         $test_value = $this->getuserIp();
 
-            //middlewareからControllerへの値の受け渡し
-
+        //middlewareからControllerへの値の受け渡し
        // $test_value = "テストバリュー";
         $request->merge(['test_value' => $test_value]);
         return $next($request);
