@@ -14,7 +14,8 @@ class AttachIp
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     //後で消す
-    function getUserIp()
+    /*
+    function getUserIpp()
     {
         if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
             $ipList = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
@@ -31,13 +32,14 @@ class AttachIp
         }
 
         return $_SERVER['REMOTE_ADDR'];
-    }
+    }*/
 
-    public function getUserIpp()
+    public function getUserIp()
     {
-        if(!empty($SERVER['HTTP_X_FORWARDED_FOR'])){
-            $ipList = explode();
+        if(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+            $ipList = explode(',',$_SERVER['HTTP_X_FORWARDED_FOR']);
         }
+        return $ipList;
     }
     public function handle(Request $request, Closure $next): Response
     {
@@ -49,10 +51,12 @@ class AttachIp
         ユーザーのIPアドレスが「モバイル回線」なのか「固定回線」なのかを判定する方法として、IPアドレスの範囲やホスト名をチェック
         */
         //$host = gethostbyaddr($ip);
+        $ip =
 
-        $userAgent = $_SERVER['HTTP_USER_AGENT'];
-        
-        //middlewareからControllerへの値の受け渡し
+       // $userAgent = $_SERVER['HTTP_USER_AGENT'];
+        $userAgent = $this->getUserIp();
+        dd($userAgent);
+            //middlewareからControllerへの値の受け渡し
         $test_value =  $userAgent;
         $request->merge(['test_value' => $test_value]);
 
