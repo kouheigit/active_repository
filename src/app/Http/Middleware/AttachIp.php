@@ -36,6 +36,7 @@ class AttachIp
 
     public function getUserIp()
     {
+        $ipList = [];
         if(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
             $ipList = explode(',',$_SERVER['HTTP_X_FORWARDED_FOR']);
         }
@@ -55,14 +56,11 @@ class AttachIp
 
        // $userAgent = $_SERVER['HTTP_USER_AGENT'];
         $userAgent = $this->getUserIp();
-        dd($userAgent);
+        dd($userAgent[0]);
+
             //middlewareからControllerへの値の受け渡し
         $test_value =  $userAgent;
         $request->merge(['test_value' => $test_value]);
-
-
-
-
         return $next($request);
     }
 }
