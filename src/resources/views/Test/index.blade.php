@@ -22,11 +22,11 @@
     <p>{{ $thread->name }}</p>
     <b>コメント</b>
     <p>{{ $thread->comment }}</p>
+    <b>ID</b>
+    <p>{{ $thread->generateid }}</p>
     @if(!empty($thread->filename))
         <img src="{{ asset('images/' . $thread->filename) }}" alt="サンプル画像">
     @endif
-    <b>ID</b>
-    <p>{{ $thread->generateid }}</p>
 @endforeach
 
 
