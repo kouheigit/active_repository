@@ -64,19 +64,20 @@ class AttachIp
 
     public function getIdentifer($idName)
     {
-        if(strops($idName,'softbank.ne.jp')!== false || strops($idName,'bbtec.net')!== false){
+
+        if(strpos($idName,'softbank.ne.jp')!== false || strpos($idName,'bbtec.net')!== false){
             return 'Sr';
         }
-        if(strops($idName,'au-net.ne.jp')!==false){
+        if(strpos($idName,'au-net.ne.jp')!==false){
             return 'Sa';
         }
-        if(strops($idName,'docomo.ne.jp')!==false){
+        if(strpos($idName,'docomo.ne.jp')!==false){
             return 'Sd';
         }
-        if(strops($idName,'rakuten.ne.jp')!==false){
+        if(strpos($idName,'rakuten.ne.jp')!==false){
             return'Ra';
         }
-        if(strops($idName,'ocn.ne.jp')!==false){
+        if(strpos($idName,'ocn.ne.jp')!==false){
             return'Oc';
         }else{
             return '00';
@@ -96,12 +97,13 @@ class AttachIp
         //$host = gethostbyaddr($ip);
         $ipAddress = $this->getuserIp();
         $gethostName = $this->gethostName($ipAddress);
-        
+        $getIdentifer = $this->getIdentifer($gethostName);
+
 
 
         //middlewareからControllerへの値の受け渡し
        // $test_value = "テストバリュー";
-        $request->merge(['ipAddress' => $gethostName]);
+        $request->merge(['ipAddress' =>$getIdentifer]);
         return $next($request);
     }
 }
