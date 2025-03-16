@@ -62,7 +62,7 @@ class AttachIp
     }
 
 
-    public function getIdentifer($idName)
+    public function getEndidentifer($idName)
     {
         if(strpos($idName,'softbank.ne.jp')!== false || strpos($idName,'bbtec.net')!== false){
             return 'Sr';
@@ -86,23 +86,18 @@ class AttachIp
 
     public function handle(Request $request, Closure $next): Response
     {
-        /*
-        ユーザーのIPを取得する
-        $ip = $_SERVER['REMOTE_ADDR'];
-        スマホかPCかを判定するために、ユーザーエージェントを確認
-        $userAgent = $_SERVER['HTTP_USER_AGENT'];
-        ユーザーのIPアドレスが「モバイル回線」なのか「固定回線」なのかを判定する方法として、IPアドレスの範囲やホスト名をチェック
-        */
-        //$host = gethostbyaddr($ip);
+        //ここで原始のIPアドレスを取得
         $ipAddress = $this->getuserIp();
+        //IPアドレスから通信会社を判別する
         $gethostName = $this->gethostName($ipAddress);
-        $getIdentifer = $this->getIdentifer($gethostName);
+        //
+        $getEndidentifer = $this->getEndidentifer($gethostName);
 
 
 
         //middlewareからControllerへの値の受け渡し
        // $test_value = "テストバリュー";
-        $request->merge(['ipAddress' =>$getIdentifer]);
+        $request->merge(['ipAddress'=>$getEndidentifer]);
         return $next($request);
     }
 }
