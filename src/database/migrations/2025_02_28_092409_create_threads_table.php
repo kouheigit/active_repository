@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->string('name')->nullable();
+            $table->string('generateid')->nullable();
             $table->longText('comment')->nullable();
             $table->string('filename')->nullable();
             $table->timestamps();

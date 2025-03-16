@@ -40,7 +40,7 @@ class TestController extends Controller
         $title = $request->input('title');
         $name = $request->input('name');
         $comment = $request->input('comment');
-        $GenerateID = $request->input('GenerateID');
+        $generateid = $request->input('GenerateID');
         $imageFileName = null;
 
         if ($request->hasFile('image')) {
@@ -52,6 +52,7 @@ class TestController extends Controller
             'name'=>$name,
             'comment'=>$comment,
             'fileName'=>$imageFileName,
+            'generateid'=>$generateid,
             'created_at'=> Carbon::now('Asia/Tokyo'),
             'updated_at'=> Carbon::now('Asia/Tokyo'),
             ];

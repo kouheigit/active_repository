@@ -9,5 +9,5 @@ class Thread extends Model
 {
     use HasFactory;
     protected $table ='threads';
-    protected $fillable = ['name','title', 'comment','filename'];
+    protected $fillable = ['name','title', 'comment','filename','generateid'];
 }
