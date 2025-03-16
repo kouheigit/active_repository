@@ -62,6 +62,11 @@ class AttachIp
     }
 
 
+    public function getIdentifer($idName)
+    {
+        
+    }
+
     public function handle(Request $request, Closure $next): Response
     {
         /*
