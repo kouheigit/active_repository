@@ -64,8 +64,25 @@ class AttachIp
 
     public function getIdentifer($idName)
     {
-        
+        if(strops($idName,'softbank.ne.jp')!== false || strops($idName,'bbtec.net')!== false){
+            return 'Sr';
+        }
+        if(strops($idName,'au-net.ne.jp')!==false){
+            return 'Sa';
+        }
+        if(strops($idName,'docomo.ne.jp')!==false){
+            return 'Sd';
+        }
+        if(strops($idName,'rakuten.ne.jp')!==false){
+            return'Ra';
+        }
+        if(strops($idName,'ocn.ne.jp')!==false){
+            return'Oc';
+        }else{
+            return '00';
+        }
     }
+
 
     public function handle(Request $request, Closure $next): Response
     {
@@ -79,6 +96,7 @@ class AttachIp
         //$host = gethostbyaddr($ip);
         $ipAddress = $this->getuserIp();
         $gethostName = $this->gethostName($ipAddress);
+        
 
 
         //middlewareからControllerへの値の受け渡し
