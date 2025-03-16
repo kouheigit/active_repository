@@ -59,8 +59,8 @@ class AttachIp
     public function gethostName($ip)
     {
         return gethostbyaddr($ip);
-
     }
+
 
     public function handle(Request $request, Closure $next): Response
     {
