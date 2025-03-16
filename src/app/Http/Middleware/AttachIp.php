@@ -39,7 +39,6 @@ class AttachIp
     public function getgenerateID($ip)
     {
         $date = date('Y-m-d');
-
         if(Cache::has("ip_id_$ip")){
             return Cache::get("ip_id_$ip");
         }
@@ -52,7 +51,7 @@ class AttachIp
         //return substr($hash,0,8);
         $id = substr($hash,0,8);
         //キャッシュを10分間は残しておく
-        Cache::put("ip_id_$ip", $id, now()->addMinutes(2));
+        Cache::put("ip_id_$ip", $id, now()->addMinutes(10));
         return $id;
     }
     //ipアドレスからキャリアを割り出す
