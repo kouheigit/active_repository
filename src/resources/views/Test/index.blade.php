@@ -8,6 +8,14 @@
     <li>{{ $error }}</li>
 @endforeach
 
+@foreach($threads as $thread)
+    <p>{{ $thread->title }}</p>
+    <p>{{ $thread->name }}</p>
+    <p>{{ $thread->comment }}</p>
+    <p>{{ $thread->filename }}</p>
+    <p>{{ $thread->generateid }}</p>
+@endforeach
+
 <form method="POST" action="{{ route('test.store') }}" enctype="multipart/form-data">
     @csrf
     <p>タイトル</p>
