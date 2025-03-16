@@ -36,8 +36,8 @@ class TestController extends Controller
     {
         //middlewareから値を取得してきたIPアドレス↓
 
-        $ipAddress = $request->input('ipAddress');
-        dd($ipAddress);
+        $GenerateID = $request->input('GenerateID');
+        dd($GenerateID);
 
         $validated = $request->validated();
         $title = $request->input('title');

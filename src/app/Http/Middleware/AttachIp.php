@@ -13,26 +13,6 @@ class AttachIp
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    //後で消す
-    /*
-    function getUserIpp()
-    {
-        if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-            $ipList = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
-            foreach ($ipList as $ip) {
-                $ip = trim($ip);
-                if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE)) {
-                    return $ip;
-                }
-            }
-        }
-
-        if (!empty($_SERVER['HTTP_CLIENT_IP']) && filter_var($_SERVER['HTTP_CLIENT_IP'], FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE)) {
-            return $_SERVER['HTTP_CLIENT_IP'];
-        }
-
-        return $_SERVER['REMOTE_ADDR'];
-    }*/
 
     public function getUserIp()
     {
@@ -54,6 +34,12 @@ class AttachIp
         }
 
         return $_SERVER['REMOTE_ADDR'];
+    }
+    public function getgenerateID($ip)
+    {
+        $date = date('Y-m-d');
+        $hash = sha1($ip . $date . uniqid());
+        return substr($hash,0,8);
     }
     //ipアドレスからキャリアを割り出す
     public function gethostName($ip)
@@ -88,16 +74,19 @@ class AttachIp
     {
         //ここで原始のIPアドレスを取得
         $ipAddress = $this->getuserIp();
-        //IPアドレスから通信会社を判別する
+        //IDを生成する
+        $getgenerateID = $this->getgenerateID($ipAddress);
+
+        //通信会社を判別する
         $gethostName = $this->gethostName($ipAddress);
-        //
+        //IDの末尾部分を生成
         $getEndidentifer = $this->getEndidentifer($gethostName);
 
-
+        //生成したID
+        $GenerateID = $getgenerateID.$getEndidentifer;
 
         //middlewareからControllerへの値の受け渡し
-       // $test_value = "テストバリュー";
-        $request->merge(['ipAddress'=>$getEndidentifer]);
+        $request->merge(['$GenerateID'=> $GenerateID]);
         return $next($request);
     }
 }
