@@ -1,13 +1,18 @@
 <h1>Test Blade</h1>
 
-@if(count($errors) > 0)
-    <p>入力に問題があります</p>
-@endif
+<form method="GET" action="{{ route('test.index') }}" enctype="multipart/form-data">
+    <b>検索</b>
+    <input type="search" class="search" id="search" name="search" value="{{old("search")}}">
+    <input type="submit" />
+</form>
 
 @foreach($errors->all() as $error)
     <li>{{ $error }}</li>
 @endforeach
 
+@if(count($errors) > 0)
+    <p>入力に問題があります</p>
+@endif
 
 @foreach($threads as $thread)
     <p>{{ $thread->id }}</p>
@@ -22,14 +27,9 @@
     @endif
     <b>ID</b>
     <p>{{ $thread->generateid }}</p>
-    <br>
 @endforeach
 
-<form method="GET" action="{{ route('test.index') }}" enctype="multipart/form-data">
-    <p>検索</p>
-    <input type="search" class="search" id="search" name="search" value="{{old("search")}}">
-    <input type="submit" />
-</form>
+
 
 
 <form method="POST" action="{{ route('test.store') }}" enctype="multipart/form-data">
