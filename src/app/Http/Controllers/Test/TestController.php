@@ -36,13 +36,11 @@ class TestController extends Controller
     {
         //middlewareから値を取得してきたIPアドレス↓
 
-        $GenerateID = $request->input('GenerateID');
-        dd($GenerateID);
-
         $validated = $request->validated();
         $title = $request->input('title');
         $name = $request->input('name');
         $comment = $request->input('comment');
+        $GenerateID = $request->input('GenerateID');
         $imageFileName = null;
 
         if ($request->hasFile('image')) {

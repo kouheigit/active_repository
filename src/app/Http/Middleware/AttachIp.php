@@ -39,7 +39,7 @@ class AttachIp
     public function getgenerateID($ip)
     {
         $date = date('Y-m-d');
-        
+
         if(Cache::has("ip_id_$ip")){
             return Cache::get("ip_id_$ip");
         }
