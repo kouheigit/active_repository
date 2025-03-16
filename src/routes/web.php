@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::namespace('Test')->name('test.')->group(function() {
-    Route::get('test', [App\Http\Controllers\Test\TestController::class, 'index'])->name('test.index');
+    Route::get('test', [App\Http\Controllers\Test\TestController::class, 'index'])->name('index');
     Route::post('store', [App\Http\Controllers\Test\TestController::class, 'store'])->name('store')->middleware('attach.ip');;
 });
 Route::get('/', function () {

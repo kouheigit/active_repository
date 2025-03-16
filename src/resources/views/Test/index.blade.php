@@ -8,13 +8,29 @@
     <li>{{ $error }}</li>
 @endforeach
 
+
 @foreach($threads as $thread)
+    <p>{{ $thread->id }}</p>
+    <b>タイトル</b>
     <p>{{ $thread->title }}</p>
+    <b>名前</b>
     <p>{{ $thread->name }}</p>
+    <b>コメント</b>
     <p>{{ $thread->comment }}</p>
-    <p>{{ $thread->filename }}</p>
+    @if(!empty($thread->filename))
+        <img src="{{ asset('images/' . $thread->filename) }}" alt="サンプル画像">
+    @endif
+    <b>ID</b>
     <p>{{ $thread->generateid }}</p>
+    <br>
 @endforeach
+
+<form method="GET" action="{{ route('test.index') }}" enctype="multipart/form-data">
+    <p>検索</p>
+    <input type="search" class="search" id="search" name="search" value="{{old("search")}}">
+    <input type="submit" />
+</form>
+
 
 <form method="POST" action="{{ route('test.store') }}" enctype="multipart/form-data">
     @csrf

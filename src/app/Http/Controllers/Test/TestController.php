@@ -15,8 +15,13 @@ class TestController extends Controller
      */
     public function index(Request $request)
     {
-        //データ一覧を表示する
-        $threads = Thread::all();
+        $search = $request->input('search');
+        if(isset($search)){
+            $threads = Thread::where('title','LIKE', "%{$search}%")->orWhere('name', 'LIKE', "%{$search}%")
+                ->orWhere('comment', 'LIKE', "%{$search}%")->get();
+        }else{
+            $threads = Thread::all();
+        }
         return view('test.index',compact('threads'));
     }
 
