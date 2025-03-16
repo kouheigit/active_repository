@@ -39,7 +39,9 @@ class AttachIp
     {
         $date = date('Y-m-d');
         $hash = sha1($ip . $date . uniqid());
-        return substr($hash,0,8);
+        //return substr($hash,0,8);
+        $id = substr($hash,0,8);
+        return $id;
     }
     //ipアドレスからキャリアを割り出す
     public function gethostName($ip)
@@ -86,7 +88,7 @@ class AttachIp
         $GenerateID = $getgenerateID.$getEndidentifer;
 
         //middlewareからControllerへの値の受け渡し
-        $request->merge(['$GenerateID'=> $GenerateID]);
+        $request->merge(['GenerateID'=> $GenerateID]);
         return $next($request);
     }
 }
