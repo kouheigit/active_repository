@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cache;
 use Symfony\Component\HttpFoundation\Response;
 
 class AttachIp
@@ -38,9 +39,20 @@ class AttachIp
     public function getgenerateID($ip)
     {
         $date = date('Y-m-d');
+
+        if(Cache::has("ip_id_$ip")){
+            return Cache::get("ip_id_$ip");
+        }
+        /*
+        if (Cache::has("ip_id_$ip")) {
+            return Cache::get("ip_id_$ip");
+        }*/
+
         $hash = sha1($ip . $date . uniqid());
         //return substr($hash,0,8);
         $id = substr($hash,0,8);
+        //キャッシュを10分間は残しておく
+        Cache::put("ip_id_$ip", $id, now()->addMinutes(2));
         return $id;
     }
     //ipアドレスからキャリアを割り出す
