@@ -64,7 +64,6 @@ class AttachIp
 
     public function getIdentifer($idName)
     {
-
         if(strpos($idName,'softbank.ne.jp')!== false || strpos($idName,'bbtec.net')!== false){
             return 'Sr';
         }
