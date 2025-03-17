@@ -22,6 +22,7 @@ class TestController extends Controller
         //                ->paginate(10);
 
         $search = $request->input('search');
+        $order = null;
 
         if(isset($search)){
             $threads = Thread::where('title','LIKE', "%{$search}%")->orWhere('name', 'LIKE', "%{$search}%")
@@ -30,7 +31,7 @@ class TestController extends Controller
             $threads = Thread::orderBy('created_at', 'asc')->Paginate(10);
            // $threads = Thread::all()->orderBy('created_at','asc')->paginate(10)->get();;
         }
-        return view('test.index',compact('threads'));
+        return view('test.index',compact('threads','order'));
     }
 
     /**
