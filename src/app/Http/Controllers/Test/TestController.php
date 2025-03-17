@@ -21,8 +21,8 @@ class TestController extends Controller
         $order = $request->input( 'order');
 
 
-        if(isset($order)){
-            $order = $request->query('order', 'asc');
+        if (!in_array($order, ['asc', 'desc'])) {
+            $order = 'asc';
         }
 
 
