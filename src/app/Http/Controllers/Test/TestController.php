@@ -30,9 +30,10 @@ class TestController extends Controller
         if(isset($search)){
             $threads = Thread::where('title','LIKE', "%{$search}%")->orWhere('name', 'LIKE', "%{$search}%")
                 ->orWhere('comment', 'LIKE', "%{$search}%")->orderBy('created_at',$order)->Paginate(10);
+            //->appends(['search' => $search, 'order' => $order]); ;
         }else{
             $threads = Thread::orderBy('created_at', $order)->Paginate(10);
-           // $threads = Thread::all()->orderBy('created_at','asc')->paginate(10)->get();;
+                //->appends(['order' => $order]);;
         }
 
 
