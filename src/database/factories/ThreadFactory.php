@@ -20,7 +20,9 @@ class ThreadFactory extends Factory
             'title'=>$this->faker->sentence,
             'name'=>$this->faker->name,
             'comment'=>$this->faker->paragraph,
-            
+            'generateid'=>'1240e2e200',
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 }
