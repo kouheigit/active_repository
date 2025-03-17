@@ -15,15 +15,11 @@ class TestController extends Controller
      */
     public function index(Request $request)
     {
-        //$threads = Thread::where('title', 'LIKE', "%{$search}%")
-        //                ->orWhere('name', 'LIKE', "%{$search}%")
-        //                ->orWhere('comment', 'LIKE', "%{$search}%")
-        //                ->orderBy('created_at', 'asc')
-        //                ->paginate(10);
+
 
         $search = $request->input('search');
-        $order = null;
 
+        $order = $request->query('order', 'asc');
         if(isset($search)){
             $threads = Thread::where('title','LIKE', "%{$search}%")->orWhere('name', 'LIKE', "%{$search}%")
                 ->orWhere('comment', 'LIKE', "%{$search}%")->orderBy('created_at','asc')->Paginate(10);
@@ -31,6 +27,8 @@ class TestController extends Controller
             $threads = Thread::orderBy('created_at', 'asc')->Paginate(10);
            // $threads = Thread::all()->orderBy('created_at','asc')->paginate(10)->get();;
         }
+
+
         return view('test.index',compact('threads','order'));
     }
 
