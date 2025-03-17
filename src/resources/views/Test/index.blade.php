@@ -1,5 +1,5 @@
 <h1>テスト掲示板</h1>
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <form method="GET" action="{{ route('test.index') }}" enctype="multipart/form-data">
     <b>検索</b>
     <input type="search" class="search" id="search" name="search" value="{{old("search")}}">
@@ -46,5 +46,9 @@
     <input type="file" id="image" name="image">
     <input type="submit" />
 </form>
+{{ $threads->links('pagination::bootstrap-5') }}
+
+{{--{{ $threads->links('pagination::tailwind') }}--}}
+
 
 
