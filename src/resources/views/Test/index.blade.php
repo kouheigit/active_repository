@@ -16,10 +16,12 @@
 
 @foreach($threads as $thread)
     <p>{{ $thread->id }}</p>
-    <b>タイトル</b>
-    <p>{{ $thread->title }}</p>
+   {{-- <p>{{$thread->created_at->format('md') }}</p>--}}
+    <p>{{ $thread->created_at }}</p>
     <b>名前</b>
     <p>{{ $thread->name }}</p>
+    <b>タイトル</b>
+    <p>{{ $thread->title }}</p>
     <b>コメント</b>
     <p>{{ $thread->comment }}</p>
     <b>ID</b>
