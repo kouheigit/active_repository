@@ -1,4 +1,4 @@
-<h1>Test Blade</h1>
+<h1>テスト掲示板</h1>
 
 <form method="GET" action="{{ route('test.index') }}" enctype="multipart/form-data">
     <b>検索</b>
