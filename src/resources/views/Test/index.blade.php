@@ -5,6 +5,8 @@
     <input type="search" class="search" id="search" name="search" value="{{old("search")}}">
     <input type="submit" />
 </form>
+
+
 <a href="{{ route('test.index', ['order' => $order === 'asc' ? 'desc' : 'asc']) }}">
     並び順: {{ $order === 'asc' ? '昇順 ▲' : '降順 ▼' }}
 </a>
@@ -50,6 +52,7 @@
     <input type="file" id="image" name="image">
     <input type="submit" />
 </form>
+
 {{ $threads->links('pagination::bootstrap-5') }}
 
 {{--{{ $threads->links('pagination::tailwind') }}--}}
