@@ -4,6 +4,8 @@
     <list default="true" id="bc314cd3-654f-4bb9-990f-8ce1e8fd5b8f" name="変更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/factories/ThreadFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/factories/ThreadFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/seeders/ThreadSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/seeders/ThreadSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +229,7 @@
       <workItem from="1741429999136" duration="802000" />
       <workItem from="1741755939778" duration="10436000" />
       <workItem from="1742102102745" duration="16287000" />
-      <workItem from="1742187769560" duration="3485000" />
+      <workItem from="1742187769560" duration="5005000" />
     </task>
     <servers />
   </component>

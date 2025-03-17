@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Thread;
+
 
 class ThreadSeeder extends Seeder
 {
@@ -12,8 +14,6 @@ class ThreadSeeder extends Seeder
      */
     public function run(): void
     {
-        Thread::factory()->count(50)->create();
-        //Thread::factory()->count(50)->create();
-
+        Thread::factory()->count(100)->create();
     }
 }
