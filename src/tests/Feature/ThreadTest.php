@@ -39,7 +39,7 @@ class ThreadTest extends TestCase
         $response = $this->get(route('test.index', ['order' => 'asc']));
         $response->assertSeeInOrder(['A First Thread', 'Z Last Thread']);
 
-        // 降順 (DESC)//test
+        // 降順 (DESC)
         $response = $this->get(route('test.index', ['order' => 'desc']));
         $response->assertSeeInOrder(['Z Last Thread', 'A First Thread']);
     }
