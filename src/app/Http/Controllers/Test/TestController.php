@@ -29,13 +29,15 @@ class TestController extends Controller
         }else{
             $query = Thread::query()->orderBy('id','desc');
         }
-        if(isset($serch)){
+
+        if(isset($search)){
             $threads = Thread::query()->where('title','like',"%{$search}%")
                 ->orwhere('name', 'lIKE', "%{$search}%")
-                ->orwhere('comment', 'lIKE', "%{$search}%");
+                ->orwhere('comment', 'lIKE', "%{$search}%")->paginate(30);
         }else{
             $threads = $query->paginate(30);
         }
+
         return view('test.index',compact('threads','order'));
     }
 
