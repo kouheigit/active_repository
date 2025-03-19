@@ -24,7 +24,7 @@
 
 @foreach($threads as $thread)
     <p>{{ $thread->id }}</p>
-   {{-- <p>{{$thread->created_at->format('md') }}</p>---}}
+   {{-- <p>{{$thread->created_at->format('md') }}</p>--}}
     <p>{{ $thread->created_at }}</p>
     <b>名前</b>
     <p>{{ $thread->name }}</p>
