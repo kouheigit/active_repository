@@ -54,7 +54,7 @@
     <input type="file" id="image" name="image">
     <input type="submit" />
 </form>
-{{--{{ $threads->links('pagination::bootstrap-5') }}---}}
+{{--{{ $threads->links('pagination::bootstrap-5') }}--}}
 {{ $threads->appends(request()->input())->links() }}
 
 
