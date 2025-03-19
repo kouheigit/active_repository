@@ -35,7 +35,7 @@ class ThreadTest extends TestCase
         Thread::factory()->create(['title' => 'A First Thread', 'id' => 1]);
         Thread::factory()->create(['title' => 'Z Last Thread', 'id' => 2]);
 
-        // 昇順 (ASC)昇順
+        // 昇順 (ASC)
         $response = $this->get(route('test.index', ['order' => 'asc']));
         $response->assertSeeInOrder(['A First Thread', 'Z Last Thread']);
 
