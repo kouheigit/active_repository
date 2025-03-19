@@ -35,10 +35,8 @@ class TestController extends Controller
                 ->orwhere('name', 'LIKE', "%$search%")
                 ->orwhere('comment', 'LIKE', "%$search%");
         }else{
-            $threads = $query->paginate(10);
+            $threads = $query->paginate(30);
         }
-        
-
 
         return view('test.index',compact('threads','order'));
     }
