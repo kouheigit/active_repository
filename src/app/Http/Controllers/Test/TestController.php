@@ -20,21 +20,24 @@ class TestController extends Controller
         $search = $request->input('search');
         $order = $request->input( 'order');
 
-
-        if (!in_array($order, ['asc', 'desc'])) {
+        if($order==null){
             $order = 'asc';
         }
 
-
-
-        if(isset($search)){
-            $threads = Thread::where('title','LIKE', "%{$search}%")->orWhere('name', 'LIKE', "%{$search}%")
-                ->orWhere('comment', 'LIKE', "%{$search}%")->orderBy('created_at',$order)->Paginate(10);
-            //->appends(['search' => $search, 'order' => $order]); ;
+        if($order=='asc'){
+            $query = Thread::query()->orderBy('id','asc');
         }else{
-            $threads = Thread::orderBy('created_at', $order)->Paginate(10);
-                //->appends(['order' => $order]);;
+            $query = Thread::query()->orderBy('id','desc');
         }
+
+        if(isset($serch)){
+            $threads = Thread::query()->where('title','like',"%$search%")
+                ->orwhere('name', 'LIKE', "%$search%")
+                ->orwhere('comment', 'LIKE', "%$search%");
+        }else{
+            $threads = $query->paginate(10);
+        }
+        
 
 
         return view('test.index',compact('threads','order'));

@@ -55,9 +55,11 @@
     <input type="submit" />
 </form>
 {{--{{ $threads->appends(['order' => $order, 'search' => request('search')])->links() }}--}}
-{{ $threads->links('pagination::bootstrap-5') }}
+{{--{{ $threads->links('pagination::bootstrap-5') }}--}}
+{{ $threads->appends(request()->input())->links() }}
 
-{{--{{ $threads->links('pagination::tailwind') }}--}}
+{{--{{ $banks->appends(request()->input())->links() }}--}}
+
 
 
 
