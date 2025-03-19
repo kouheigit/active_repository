@@ -5,7 +5,7 @@
 /public/storage
 /storage/*.key
 /vendor
-/resources/indexcopy.blade.php
+/resources/views/Test/indexcopy.blade.php
 .env
 .env.backup
 .env.production
