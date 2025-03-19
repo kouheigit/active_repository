@@ -54,11 +54,9 @@
     <input type="file" id="image" name="image">
     <input type="submit" />
 </form>
-{{--{{ $threads->appends(['order' => $order, 'search' => request('search')])->links() }}--}}
 {{--{{ $threads->links('pagination::bootstrap-5') }}--}}
 {{ $threads->appends(request()->input())->links() }}
 
-{{--{{ $banks->appends(request()->input())->links() }}--}}
 
 
 
