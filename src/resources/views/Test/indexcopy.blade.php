@@ -8,7 +8,7 @@
 <a href="{{ route('test.index', ['order' => $order === 'asc' ? 'desc' : 'asc', 'search' => request('search')]) }}">
     並び順: {{ $order === 'asc' ? '昇順 ▲' : '降順 ▼' }}
 </a>
-{{----
+{{--
 <a href="{{ route('test.index', ['order' => $order === 'asc' ? 'desc' : 'asc']) }}">
     並び順: {{ $order === 'asc' ? '昇順 ▲' : '降順 ▼' }}
 </a>--}}
