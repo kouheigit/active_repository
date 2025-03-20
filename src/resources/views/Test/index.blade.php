@@ -1,62 +1,61 @@
-<h1>テスト掲示板</h1>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<form method="GET" action="{{ route('test.index') }}" enctype="multipart/form-data">
-    <b>検索</b>
-    <input type="search" class="search" id="search" name="search" value="{{old("search")}}">
-    <input type="submit" />
-</form>
-<a href="{{ route('test.index', ['order' => $order === 'asc' ? 'desc' : 'asc', 'search' => request('search')]) }}">
-    並び順: {{ $order === 'asc' ? '昇順 ▲' : '降順 ▼' }}
-</a>
-{{--
-<a href="{{ route('test.index', ['order' => $order === 'asc' ? 'desc' : 'asc']) }}">
-    並び順: {{ $order === 'asc' ? '昇順 ▲' : '降順 ▼' }}
-</a>--}}
+@extends('layouts.testapp')
 
+@section('content')
 
-@foreach($errors->all() as $error)
-    <li>{{ $error }}</li>
-@endforeach
+    <!-- 検索フォーム -->
+    <form method="GET" action="{{ route('test.index') }}" class="search-form">
+        <b>検索</b>
+        <input type="search" name="search" value="{{ request('search') }}">
+        <input type="submit" value="検索">
+    </form>
 
-@if(count($errors) > 0)
-    <p>入力に問題があります</p>
-@endif
+    <!-- 並び順変更リンク -->
+    <a href="{{ route('test.index', ['order' => $order === 'asc' ? 'desc' : 'asc', 'search' => request('search')]) }}">
+        並び順: {{ $order === 'asc' ? '昇順 ▲' : '降順 ▼' }}
+    </a>
 
-@foreach($threads as $thread)
-    <p>{{ $thread->id }}</p>
-   {{-- <p>{{$thread->created_at->format('md') }}</p>--}}
-    <p>{{ $thread->created_at }}</p>
-    <b>名前</b>
-    <p>{{ $thread->name }}</p>
-    <b>タイトル</b>
-    <p>{{ $thread->title }}</p>
-    <b>コメント</b>
-    <p>{{ $thread->comment }}</p>
-    <b>ID</b>
-    <p>{{ $thread->generateid }}</p>
-    @if(!empty($thread->filename))
-        <img src="{{ asset('images/' . $thread->filename) }}" alt="サンプル画像">
-    @endif
-@endforeach
+    <!-- スレッド一覧 -->
+    <ul class="thread-list">
+        @foreach($threads as $thread)
+            <li>
+                <p class="thread-meta">
+                    <b>{{ $thread->id }} : {{ $thread->name }}</b> {{ $thread->created_at->format('Y/m/d H:i') }} ID:{{ $thread->generateid }}
+                </p>
+                <p class="thread-content">{{ $thread->comment }}</p>
+            </li>
+        @endforeach
+    </ul>
 
+    <!-- ページネーション -->
 
+    <div class="pagination">
+        {{ $threads->appends(request()->input())->links() }}
+    </div>
 
-
-<form method="POST" action="{{ route('test.store') }}" enctype="multipart/form-data">
-    @csrf
-    <p>タイトル</p>
-   <input type="text" class="title" id="title" name="title" value="{{old("title")}}">
-    <p>名前</p>
-    <input type="text" class="name" id="name" name="name" value="{{old("name")}}">
-    <p>コメント</p>
-    <textarea name="comment"class="comment" id="comment" cols="30" rows="10">{{old("comment")}}</textarea>
-    <p>画像</p>
-    <input type="file" id="image" name="image">
-    <input type="submit" />
-</form>
-{{--{{ $threads->links('pagination::bootstrap-5') }}--}}
-{{ $threads->appends(request()->input())->links() }}
-
+    <!-- 新規投稿フォーム -->
+    <form method="POST" action="{{ route('test.store') }}" id="new-post">
+        @csrf
+        <table class="post-form">
+            <tr>
+                <td>名前</td>
+                <td><input type="text" name="name" value="{{ old('name') }}" class="small-input"></td>
+            </tr>
+            <tr>
+                <td>タイトル</td>
+                <td><input type="text" name="title" value="{{ old('title') }}" class="small-input"></td>
+            </tr>
+            <tr>
+                <td>コメント</td>
+                <td><textarea name="comment" rows="3" class="small-textarea">{{ old('comment') }}</textarea></td>
+            </tr>
+            <tr>
+                <td>画像</td>
+                <td><input type="file" name="image"></td>
+            </tr>
+        </table>
+        <input type="submit" value="書き込む">
+    </form>
+@endsection
 
 
 
