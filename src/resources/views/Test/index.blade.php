@@ -22,6 +22,9 @@
                     <b>{{ $thread->id }} : {{ $thread->name }}</b> {{ $thread->created_at->format('Y/m/d H:i') }} ID:{{ $thread->generateid }}
                 </p>
                 <p class="thread-content">{{ $thread->comment }}</p>
+                @if(!empty($thread->filename))
+                    <img src="{{ asset('images/' . $thread->filename) }}" width="193" height="130">
+                @endif
             </li>
         @endforeach
     </ul>
