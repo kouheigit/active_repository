@@ -37,6 +37,7 @@ class TestController extends Controller
             $threads = $query->paginate(30);
         }
 
+
         return view('test.index',compact('threads','order'));
     }
 

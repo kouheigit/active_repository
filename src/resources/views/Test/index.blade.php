@@ -22,6 +22,7 @@
                     <b>{{ $thread->id }} : {{ $thread->name }}</b> {{ $thread->created_at->format('Y/m/d H:i') }} ID:{{ $thread->generateid }}
                 </p>
                 <p class="thread-content">{{ $thread->comment }}</p>
+                <img src="{{ asset('images/1741248661_zelda-breath-of-the-wild-link-me-kako-2.jpg') }}" width="193" height="130">
                 @if(!empty($thread->filename))
                     <img src="{{ asset('images/' . $thread->filename) }}" width="193" height="130">
                 @endif
