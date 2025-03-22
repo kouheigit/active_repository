@@ -22,7 +22,6 @@
                     <b>{{ $thread->id }} : {{ $thread->name }}</b> {{ $thread->created_at->format('Y/m/d H:i') }} ID:{{ $thread->generateid }}
                 </p>
                 <p class="thread-content">{{ $thread->comment }}</p>
-                <img src="{{ asset('images/1741248661_zelda-breath-of-the-wild-link-me-kako-2.jpg') }}" width="193" height="130">
                 @if(!empty($thread->filename))
                     <img src="{{ asset('images/' . $thread->filename) }}" width="193" height="130">
                 @endif
@@ -37,7 +36,8 @@
     </div>
 
     <!-- 新規投稿フォーム -->
-    <form method="POST" action="{{ route('test.store') }}" id="new-post">
+    <form method="POST" action="{{ route('test.store') }}" id="new-post" enctype="multipart/form-data">
+   {{-- <form method="POST" action="{{ route('test.store') }}" id="new-post">--}}
         @csrf
         <table class="post-form">
             <tr>

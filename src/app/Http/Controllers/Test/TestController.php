@@ -56,6 +56,7 @@ class TestController extends Controller
     {
         //middlewareから値を取得してきたIPアドレス↓
 
+
         $validated = $request->validated();
         $title = $request->input('title');
         $name = $request->input('name');
@@ -67,6 +68,7 @@ class TestController extends Controller
             $imageFileName = time() . '_' . $request->file('image')->getClientOriginalName();
             $request->file('image')->move(public_path('images'),$imageFileName);
         }
+
         $theadData = [
             'title'=>$title,
             'name'=>$name,
