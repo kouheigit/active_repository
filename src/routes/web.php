@@ -13,12 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //テスト掲示板のRoute
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::namespace('Test')->name('test.')->group(function() {
     Route::get('test', [App\Http\Controllers\Test\TestController::class, 'index'])->name('index');
     Route::post('store', [App\Http\Controllers\Test\TestController::class, 'store'])->name('store')->middleware('attach.ip');;
 });
-Route::get('/', function () {
-    return view('welcome');
+
+Route::namespace('Reacttest')->name('reacttest.')->group(function(){
+    Route::get('Reacttest', [App\Http\Controllers\Reacttest\Reacttest::class, 'index'])->name('index');
 });
 
 /*
