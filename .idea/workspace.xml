@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bc314cd3-654f-4bb9-990f-8ce1e8fd5b8f" name="変更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/views/Reacttest/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/Reacttest/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +238,7 @@
       <workItem from="1742459066134" duration="4775000" />
       <workItem from="1742634860970" duration="2696000" />
       <workItem from="1743323253873" duration="945000" />
-      <workItem from="1743406929241" duration="3865000" />
+      <workItem from="1743406929241" duration="4191000" />
     </task>
     <servers />
   </component>
