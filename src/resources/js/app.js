@@ -13,3 +13,16 @@ import './bootstrap';
  */
 
 import './components/Example';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import Counter from './components/Counter'
+
+//$test = new test();クラスのインスタンス化
+const roofElement = document.getElementById('react-root');
+if(roofElement){
+    //$test1 = $test->method(10);メソット呼び出し
+    const root = ReactDOM.createRoot(roofElement)
+    //return view('components.counter');
+    root.render(<Counter />)
+}
+
