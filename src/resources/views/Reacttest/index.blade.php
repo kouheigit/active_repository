@@ -8,7 +8,7 @@
 </head>
 <body>
 <div id="react-root">
-    @vite('resources/js/app/js')
+    @vite('resources/js/app.jsx')
 </div>
 </body>
 </html>
