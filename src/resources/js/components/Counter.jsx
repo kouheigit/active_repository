@@ -3,7 +3,7 @@
 
 import React, { useState } from 'react';
 export default function Counter(){
-    //list(count,setCount),SESSION['count'],SESSION['setCount']
+    // list(count, setCount) に相当。セッションで言えば count = $_SESSION['count'];
     const [ count,setCount] = useState(0)
     return (
         <div>
