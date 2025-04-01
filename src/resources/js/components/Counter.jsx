@@ -13,4 +13,29 @@ export default function Counter(){
         </div>
     )
 }
+/*
+<?php
+session_start();
 
+// 初期値の設定（useState(0) に相当）
+if (!isset($_SESSION['count'])) {
+    $_SESSION['count'] = 0;
+}
+
+// ボタンが押されたら（POST）
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $_SESSION['count']++; // ← setCount(count + 1) に相当
+    header('Location: ' . $_SERVER['PHP_SELF']);
+    exit;
+}
+?>
+
+<!-- 表示部分 -->
+<p>現在のカウント: <?php echo $_SESSION['count']; ?></p>
+
+<form method="POST">
+    <button type="submit">+1</button>
+</form>
+
+
+ */
