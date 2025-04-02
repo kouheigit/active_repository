@@ -15,7 +15,7 @@ import './components/Example';
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Counter from './components/Counter'
-import Day1 from './components/Day1'
+//import Day1 from './components/Day1'
 
 
 //$test = new test();クラスのインスタンス化
@@ -26,12 +26,14 @@ if(roofElement){
     //return view('components.counter');
     root.render(<Counter />)
 }
+
 //react-day1root
+/*
 const day1Element = document.getElementById('react-day1root');
 if(day1Element){
     const day1 = ReactDOM.createRoot(day1Element)
     day1.render(<Day1 />)
-}
+}*/
 
 
 
