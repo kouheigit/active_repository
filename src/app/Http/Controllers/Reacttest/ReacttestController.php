@@ -11,4 +11,9 @@ class ReacttestController extends Controller
     {
         return view('reacttest.index');
     }
+
+    public function day1(Request $request)
+    {
+        return view('reacttest.Day1');
+    }
 }
