@@ -17,6 +17,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Counter from './components/Counter'
 
+
+
 //$test = new test();クラスのインスタンス化
 const roofElement = document.getElementById('react-root');
 if(roofElement){
@@ -25,4 +27,12 @@ if(roofElement){
     //return view('components.counter');
     root.render(<Counter />)
 }
+//react-day1root
+const day1Element = docment.getElementById('react-day1root');
+if(day1Element){
+    const day1 = ReactDom.createRoot(day1Element)
+   // day1.render(</>)
+}
+
+
 
