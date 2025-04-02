@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc314cd3-654f-4bb9-990f-8ce1e8fd5b8f" name="変更" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/js/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/app.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/js/components/Day1.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/components/Day1.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -244,7 +246,7 @@
       <workItem from="1743429483273" duration="1173000" />
       <workItem from="1743484951404" duration="3815000" />
       <workItem from="1743504295987" duration="897000" />
-      <workItem from="1743581541515" duration="3160000" />
+      <workItem from="1743581541515" duration="3916000" />
     </task>
     <servers />
   </component>

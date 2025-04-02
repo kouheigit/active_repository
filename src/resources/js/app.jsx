@@ -11,12 +11,11 @@ import './bootstrap';
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-
 import './components/Example';
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Counter from './components/Counter'
-import Counter from './components/Day1'
+import Day1 from './components/Day1'
 
 
 //$test = new test();クラスのインスタンス化
@@ -28,10 +27,9 @@ if(roofElement){
     root.render(<Counter />)
 }
 //react-day1root
-const day1Element = docment.getElementById('react-day1root');
+const day1Element = document.getElementById('react-day1root');
 if(day1Element){
-    const day1 = ReactDom.createRoot(day1Element)
-    
+    const day1 = ReactDOM.createRoot(day1Element)
     day1.render(<Day1 />)
 }
 
