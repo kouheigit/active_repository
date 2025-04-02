@@ -7,7 +7,7 @@
 </head>
 <body>
 <div id="react-day1root">
-    @vite('resources/js/app.jsx)
+    @vite('resources/js/app.jsx')
 </div>
 </body>
 </html>

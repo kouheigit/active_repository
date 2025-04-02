@@ -16,7 +16,7 @@ import './components/Example';
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Counter from './components/Counter'
-
+import Counter from './components/Day1'
 
 
 //$test = new test();クラスのインスタンス化
