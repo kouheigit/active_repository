@@ -10,6 +10,8 @@ export default function Counter(){
             <h2>カウンターアプリ</h2>
             <p>現在のカウント{count}</p>
             <button onClick={() => setCount(count + 1)}>+1</button>
+            <button onClick={() => setCount(count - 1)}>-1</button>
+            <button onClick={() => setCount(count * 0)}>リセット</button>
         </div>
     )
 }
