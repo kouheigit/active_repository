@@ -31,6 +31,7 @@ if(roofElement){
 const day1Element = docment.getElementById('react-day1root');
 if(day1Element){
     const day1 = ReactDom.createRoot(day1Element)
+    
     day1.render(<Day1 />)
 }
 

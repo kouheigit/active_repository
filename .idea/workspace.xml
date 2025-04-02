@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc314cd3-654f-4bb9-990f-8ce1e8fd5b8f" name="変更" comment="">
-      <change beforePath="$PROJECT_DIR$/src/resources/js/Day1.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/Day1.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/js/components/Day1.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/components/Day1.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,6 +172,9 @@
       <recent name="$PROJECT_DIR$/src/resources/views/Test/.ignore" />
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/resources/js/components" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="アプリケーションレベル" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -241,7 +244,7 @@
       <workItem from="1743429483273" duration="1173000" />
       <workItem from="1743484951404" duration="3815000" />
       <workItem from="1743504295987" duration="897000" />
-      <workItem from="1743581541515" duration="2875000" />
+      <workItem from="1743581541515" duration="3160000" />
     </task>
     <servers />
   </component>
