@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 export default function Day1(){
-   // const [count,setCount] = usestate(0);
+    const [count,setCount] = useState(0);
     return (
-        <div>
-            <h2>カウンター増減アプリ</h2>
-            <h2>表示されない</h2>
-        </div>
+            <div>
+                <h2>カウンターアプリ</h2>
+                <p>現在のカウント{count}</p>
+                <button onClick={() => setCount(count + 1)}>+1</button>
+                <button onClick={() => setCount(count - 1)}>-1</button>
+                <button onClick={() => setCount(count * 0)}>リセット</button>
+            </div>
     )
 }
 
