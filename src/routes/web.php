@@ -24,6 +24,7 @@ Route::namespace('Reacttest')->name('reacttest.')->group(function(){
    //未記入
     Route::get('reacttest/day1', [App\Http\Controllers\Reacttest\ReacttestController::class,'Day1'])->name('Day1');
     //Route::get('reacttest', [App\Http\Controllers\Reacttest\ReacttestController::class,'Day1'])->name('Day1');
+    Route::get('reacttest/todo', [App\Http\Controllers\Reacttest\ReacttestController::class,'todo'])->name('todo');
 });
 
 Route::get('/', function () {
