@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc314cd3-654f-4bb9-990f-8ce1e8fd5b8f" name="変更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/resources/js/components/Todo.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/views/Reacttest/todo.index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/js/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/app.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/js/components/Counter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/components/Counter.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/js/components/Todo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/components/Todo.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +247,7 @@
       <workItem from="1743504295987" duration="897000" />
       <workItem from="1743581541515" duration="6337000" />
       <workItem from="1743593760405" duration="1680000" />
-      <workItem from="1743662197540" duration="1615000" />
+      <workItem from="1743662197540" duration="3058000" />
     </task>
     <servers />
   </component>
