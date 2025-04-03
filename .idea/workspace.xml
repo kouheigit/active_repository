@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bc314cd3-654f-4bb9-990f-8ce1e8fd5b8f" name="変更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/Http/Controllers/Reacttest/ReacttestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/Http/Controllers/Reacttest/ReacttestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/js/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/app.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resources/js/components/Todo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/components/Todo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/views/Reacttest/todo.index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/Reacttest/todo.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,6 +249,8 @@
       <workItem from="1743593760405" duration="1680000" />
       <workItem from="1743662197540" duration="5583000" />
       <workItem from="1743674064860" duration="852000" />
+      <workItem from="1743676295525" duration="1013000" />
+      <workItem from="1743679096199" duration="550000" />
     </task>
     <servers />
   </component>
