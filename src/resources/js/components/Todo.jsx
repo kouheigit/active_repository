@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 export default function Todo(){
-    const [count,setCount] = useState(0);
+    const[todos,setTodos] = useState([]);
     return (
         <div>
             <input type="text" name="name" >
