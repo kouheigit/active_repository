@@ -16,6 +16,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Counter from './components/Counter'
 import Day1 from './components/Day1'
+import Todo from './components/Todo'
 
 
 //$test = new test();クラスのインスタンス化
@@ -33,6 +34,11 @@ if(day1Element){
     const day1 = ReactDOM.createRoot(day1Element)
     day1.render(<Day1 />)
 }
-
+//react-roottodo
+const todoElement = document.getElementById('react-roottodo')
+if(todoElement){
+    const todo = ReactDOM.createRoot(todoElement)
+    todo.render(<Todo />)
+}
 
 
