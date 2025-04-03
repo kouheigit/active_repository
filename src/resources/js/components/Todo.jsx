@@ -3,7 +3,8 @@ export default function Todo(){
     const[todos,setTodos] = useState([]);
     return (
         <div>
-            <input type="text" value={input} onChange={(e => setInput(e.target.value))}/>
+            <input  value={todos} onChange={(e => setTodos(e.target.value))}/>
+            <p>あなたの名前は{input}です</p>
         </div>
     )
 }
