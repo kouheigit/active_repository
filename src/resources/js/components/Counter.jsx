@@ -12,7 +12,6 @@ export default function Counter(){
             <button onClick={() => setCount(count + 1)}>+1</button>
             <button onClick={() => setCount(count - 1)}>-1</button>
             <button onClick={() => setCount(0)}>リセット</button>
-            <button onClick={() => setCount(0)}>リセット</button>
         </div>
     )
 }
