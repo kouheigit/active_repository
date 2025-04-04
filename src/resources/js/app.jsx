@@ -35,7 +35,6 @@ if(day1Element){
     day1.render(<Day1 />)
 }
 //react-roottodo
-
 const todoElement = document.getElementById('react-roottodo')
 if(todoElement){
     const todo = ReactDOM.createRoot(todoElement)
