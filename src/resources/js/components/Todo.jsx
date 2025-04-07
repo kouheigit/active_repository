@@ -8,6 +8,9 @@ export default function Todo(){
         setTodos([...todos,inputs]);
         setInput('');
     };
+    const deleteTodo = (deleteIndex) => {
+        setTodos(todos.filter((_, index) => index !== deleteIndex));
+    };
 
     return (
         <div>
@@ -15,7 +18,7 @@ export default function Todo(){
             <p>入力された値: {inputs}</p>
             <button onClick={addTodo}>追加</button>
             {todos.map((todo,index)=>(
-                <li key={index}>{todo}</li>
+                <li key={index}>{todo}<button onClick={() => deleteTodo(index)}>削除</button></li>
             ))}
         </div>
     )
