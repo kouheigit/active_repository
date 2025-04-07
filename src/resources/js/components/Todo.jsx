@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 export default function Todo(){
-    const [todos,setTodos] = useState('');
+    const [inputs,setInput] = useState('');
     return (
         <div>
             <input
                 type="text"
-                value={todos}
-                onChange={(e) => setTodos(e.target.value)}
+                value={inputs}
+                onChange={(e) => setInput(e.target.value)}
                 />
-            <p>入力された値: {todos}</p>
+            <p>入力された値: {inputs}</p>
         </div>
     )
 }
