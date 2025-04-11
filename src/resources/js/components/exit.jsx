@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 import React, { useState } from 'react';
 
-export default function Todo(){
+function AdvanceTodo(){
 
     const [todos,setTodos] = useState([]);
     const [inputs,setInput] = useState('');
@@ -48,5 +48,3 @@ export default function Todo(){
         </div>
     );
 }
-
-
