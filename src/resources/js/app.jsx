@@ -41,6 +41,11 @@ if(todoElement){
     todo.render(<Todo />)
 }
 
+const reacttodo1 = document.getElementById('react-todo1')
+if(reacttodo1){
+    const todo = ReactDOM.createRoot(reacttodo1)
+    todo.render(<Todo1 />)
+}
 
 
 

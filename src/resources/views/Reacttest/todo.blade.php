@@ -9,5 +9,8 @@
 <div id="react-roottodo">
     @vite('resources/js/app.jsx')
 </div>
+<div id="react-todo1">
+    @vite('resources/js/app.jsx')
+</div>
 </body>
 </html>
