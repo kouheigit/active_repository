@@ -1,9 +1,7 @@
-import ReactDOM from 'react-dom';
-import { useCounter } from '../hooks/useCounter';
+import { useCounter } from './hooks/useCounter';
 
 export default function Todo1(){
     const { todos,setTodos,inputs,setInput, addTodo, deleteTodo, toggleCheck } = useCounter();
-
 
     return (
         <div className="todo">

@@ -1,16 +1,17 @@
-import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
+import React, { useState } from 'react';
+
 
 export function useCounter() {
 
-    const [todos,setTodos] = useState([]);
-    const [inputs,setInput] = useState('');
+    const [todos, setTodos] = useState([]);
+    const [inputs, setInput] = useState('');
     //   const [checks,setCheck] = useState(false);
 
     //値を追加するメソット
-    const addTodo = ()=>{
-        if(inputs.trim()==='') return;
-        setTodos([...todos, { text: inputs,done: false }]);
+    const addTodo = () => {
+        if (inputs.trim() === '') return;
+        setTodos([...todos, {text: inputs, done: false}]);
         //setTodos([...todos,inputs]);
         setInput('');
     };
@@ -22,12 +23,12 @@ export function useCounter() {
         setTodos(
             todos.map((todo, i) => {
                 if (i === index) {
-                    return { ...todo, done: !todo.done };
+                    return {...todo, done: !todo.done};
                 } else {
                     return todo;
                 }
             })
         );
-        return { todos,setTodos,inputs,setInput,addTodo,deleteTodo,toggleCheck };
+        return {todos, setTodos, inputs, setInput, addTodo, deleteTodo, toggleCheck};
     }
-    ;
+}
