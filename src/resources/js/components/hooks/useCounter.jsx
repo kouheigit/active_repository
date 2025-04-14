@@ -29,6 +29,6 @@ export function useCounter() {
                 }
             })
         );
-        return {todos, setTodos, inputs, setInput, addTodo, deleteTodo, toggleCheck};
     }
+    return {todos, setTodos, inputs, setInput, addTodo, deleteTodo, toggleCheck};
 }
