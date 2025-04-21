@@ -10,14 +10,7 @@ export default function Todo2(){
         if(filter === 'undone') return !todo.done;
         return true;
     });
-    /*
-     const filteredTodos = todos.filter((todo)=>{
-       if(filter === 'done') return todo.done;
-       if(filter === 'undone') return !todo.done;
-       return true;
-    });
-     */
-
+    
     return (
         <div className="todo">
             <input type="text" value={inputs} onChange={(e) => setInput(e.target.value)}/>
