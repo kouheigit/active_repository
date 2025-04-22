@@ -9,9 +9,8 @@ export default function Todo3(){
     return(
      <div className="todo3">
          <input type="text" value={inputs} onChange={(e)=>setInput(e.target.value)}/>
-         <p>入力された値: {inputs}</p>
-
-         <h1>表示テスト</h1>
+         <p>入力された値{inputs}</p>
+         
      </div>
     );
 }
