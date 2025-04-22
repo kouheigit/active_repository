@@ -10,7 +10,6 @@ export default function Todo3(){
      <div className="todo3">
          <input type="text" value={inputs} onChange={(e)=>setInput(e.target.value)}/>
          <p>入力された値{inputs}</p>
-         
      </div>
     );
 }
