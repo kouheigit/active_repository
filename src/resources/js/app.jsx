@@ -19,6 +19,7 @@ import Day1 from './components/Day1'
 import Todo from './components/Todo'
 import Todo1 from './components/Todo1'
 import Todo2 from './components/Todo2'
+import Todo3 from './components/Todo3'
 
 
 //$test = new test();クラスのインスタンス化
@@ -45,6 +46,7 @@ if(todoElement){
             <Todo />
             <Todo1 />
             <Todo2 />
+            <Todo3 />
         </>
     );
 }
