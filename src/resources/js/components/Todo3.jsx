@@ -1,5 +1,5 @@
 import { useCounter } from "./hooks/useCounter1";
-import { useState,useEffect  } from "react";
+import React, { useState,useEffect  } from "react";
 
 export default function Todo3(){
     //配列を格納する
@@ -8,6 +8,9 @@ export default function Todo3(){
 
     return(
      <div className="todo3">
+         <input type="text" value={inputs} onChange={(e)=>setInput(e.target.value)}/>
+         <p>入力された値: {inputs}</p>
+
          <h1>表示テスト</h1>
      </div>
     );
