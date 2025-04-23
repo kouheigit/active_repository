@@ -10,13 +10,7 @@ export default function Todo3(){
         setTodos([todos,{ text:inputs,done:false }]);
         setInput('');
     }
-    /*
-    const addTodo = ()=>{
-        if(inputs.trim()==='') return;
-        setTodos([...todos, { text: inputs,done: false }]);
-        //setTodos([...todos,inputs]);
-        setInput('');
-    };*/
+   
     return(
      <div className="todo3">
          <input type="text" value={inputs} onChange={(e)=>setInput(e.target.value)}/>
