@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bc314cd3-654f-4bb9-990f-8ce1e8fd5b8f" name="変更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/js/components/Todo3.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/components/Todo3.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -278,6 +279,8 @@
       <workItem from="1745298482187" duration="212000" />
       <workItem from="1745298924437" duration="1185000" />
       <workItem from="1745323370317" duration="1245000" />
+      <workItem from="1745406020585" duration="114000" />
+      <workItem from="1745406518373" duration="621000" />
     </task>
     <servers />
   </component>

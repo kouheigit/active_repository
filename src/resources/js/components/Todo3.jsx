@@ -5,7 +5,12 @@ export default function Todo3(){
     //配列を格納する
     const [todos,setTodos] = useState([]);
     const[inputs,setInput] = useState('');
-
+    const addTodo = ()=>{
+        if(inputs.trim()==='') return;
+        setTodos([...todos, { text: inputs,done: false }]);
+        //setTodos([...todos,inputs]);
+        setInput('');
+    };
     return(
      <div className="todo3">
          <input type="text" value={inputs} onChange={(e)=>setInput(e.target.value)}/>
