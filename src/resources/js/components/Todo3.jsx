@@ -15,7 +15,7 @@ export default function Todo3(){
     return(
      <div className="todo3">
          <input type="text" value={inputs} onChange={(e)=>setInput(e.target.value)}/>
-         <button onClick={addTodo}></button>
+         <button onClick={addTodo}>追加</button>
          <p>入力された値{inputs}</p>
          {todos.map((todo,index)=>(
              <li key={index}>
