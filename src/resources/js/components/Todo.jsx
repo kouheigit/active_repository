@@ -44,7 +44,6 @@ export default function Todo(){
                         {/*<input type="checkbox" checked={checks} onChange={(e)=> setCheck(e.target.checked)}/>*/}
                         {todo.text}</span><button onClick={() => deleteTodo(index)}>削除</button></li>
             ))}
-
         </div>
     );
 }

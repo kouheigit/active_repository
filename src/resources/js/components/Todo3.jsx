@@ -8,9 +8,14 @@ export default function Todo3(){
 
     const addTodo = ()=>{
         if(inputs.trim()=='')return;
-        setTodos([...todos,{ text:inputs,done: false }]);
+        setTodos([...todos, { text: inputs,done: false }]);
         setInput('');
     }
+    //filter関数について
+    //filter関数は指定された値をピックアップする関数
+    const numbers = [1,2,3,4,5];
+    const even = numbers.filter(n => n % 2 === 0);
+    console.log(even);
 
     return(
      <div className="todo3">
