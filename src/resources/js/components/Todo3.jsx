@@ -8,7 +8,7 @@ export default function Todo3(){
 
     const addTodo = ()=>{
         if(inputs.trim()=='')return;
-        setTodos([todos,{ text:inputs,done:false }]);
+        setTodos([todos,{ text:inputs,done: false }]);
         setInput('');
     }
 
