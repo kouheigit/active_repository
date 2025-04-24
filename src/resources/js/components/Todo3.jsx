@@ -5,17 +5,24 @@ export default function Todo3(){
     //配列を格納する
     const [todos,setTodos] = useState([]);
     const[inputs,setInput] = useState('');
+
     const addTodo = ()=>{
         if(inputs.trim()=='')return;
         setTodos([todos,{ text:inputs,done:false }]);
         setInput('');
     }
-   
+
     return(
      <div className="todo3">
          <input type="text" value={inputs} onChange={(e)=>setInput(e.target.value)}/>
          <button onClick={addTodo}></button>
          <p>入力された値{inputs}</p>
+         {todos.map((todo,index)=>(
+             <li key={index}>
+                 <p>{todo.text}</p>
+             </li>
+
+         ))}
      </div>
     );
 }
