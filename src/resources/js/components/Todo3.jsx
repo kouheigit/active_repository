@@ -22,10 +22,10 @@ export default function Todo3(){
     const even = numbers.filter(n => n % 2 === 0);
     console.log(even);
     //
-
-    const word =["plumber","attire","bank","character","choose"];
-    const evens = word.filter()
-
+    const addfilter = () => {
+        const word = ["plumber", "attire", "bank", "character", "choose"];
+        const evens = word.filter()
+    }
     return(
      <div className="todo3">
          <input type="text" value={inputs} onChange={(e)=>setInput(e.target.value)}/>
