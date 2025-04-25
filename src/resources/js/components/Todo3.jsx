@@ -23,24 +23,24 @@ export default function Todo3(){
     console.log(even);
 
     //addfilterの実装
-    const addfilter = () => {
+    //const addfilter = () => {
         const word = ["plumber", "attire", "bank", "character", "choose"];
-        /*
-
-         */
-    }
+        const result = words.filter(word=>word.include('c'));
+        setTest(result);
+   // }
     return(
      <div className="todo3">
          <input type="text" value={inputs} onChange={(e)=>setInput(e.target.value)}/>
          <button onClick={addTodo}>追加</button>
+         <button onClick={addfilter}>フィルター稼働</button>
          <p>入力された値{inputs}</p>
          {todos.map((todo,index)=>(
              <li key={index}>
                  <p>{todo.text}</p>
                  <button onClick={()=>delete(index)}>削除する</button>
              </li>
-
          ))}
+
      </div>
     );
 }
