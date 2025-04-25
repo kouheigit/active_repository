@@ -40,8 +40,7 @@ export default function Todo3(){
                  <button onClick={()=>delete(index)}>削除する</button>
              </li>
          ))}
-         {
-             tests.map((test,index)=>(
+         {tests.map((test,index)=>(
                  <li key={index}>
                      <p>{test}</p>
                  </li>
