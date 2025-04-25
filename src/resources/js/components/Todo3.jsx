@@ -35,7 +35,7 @@ import React, { useState,useEffect  } from "react";
             )
         }
 
-    
+
 
         return (
             <div className="todo3">
@@ -52,6 +52,10 @@ import React, { useState,useEffect  } from "react";
                     <li key={index}>
                         <p>{test}</p>
                     </li>
+                ))}
+                {dtests.map((dtest,index) =>(
+
+
                 ))}
             </div>
         );
