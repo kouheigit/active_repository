@@ -5,7 +5,10 @@ export default function Todo(){
 
     const [todos,setTodos] = useState([]);
     const [inputs,setInput] = useState('');
-    
+    const [dtests,deleteTest] = useState(['いちろう','じろう','さぶろう','しろう']);
+
+
+
 
     //値を追加するメソット
     const addTodo = ()=>{
