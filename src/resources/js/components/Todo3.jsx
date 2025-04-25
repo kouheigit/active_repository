@@ -42,8 +42,8 @@ export default function Todo3(){
          ))}
          {
              tests.map((test,index)=>(
-                 <li>
-
+                 <li key={index}>
+                     <p>{test}</p>
                  </li>
              ))
          }
