@@ -6,6 +6,9 @@ import React, { useState,useEffect  } from "react";
         const [todos, setTodos] = useState([]);
         const [inputs, setInput] = useState('');
         const [tests, setTest] = useState([]);
+        
+        const [dtests,deleteTest] = useState(['いちろう','じろう','さぶろう','しろう']);
+
 
 
         const addTodo = () => {
