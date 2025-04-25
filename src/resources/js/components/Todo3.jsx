@@ -21,10 +21,15 @@ export default function Todo3(){
     const numbers = [1,2,3,4,5];
     const even = numbers.filter(n => n % 2 === 0);
     console.log(even);
-    //
+
+    //addfilterの実装
     const addfilter = () => {
         const word = ["plumber", "attire", "bank", "character", "choose"];
         const evens = word.filter()
+        /*
+        const keyword = '勉強';
+        const result = todos.filter(todo => todo.text.includes(keyword));
+         */
     }
     return(
      <div className="todo3">
