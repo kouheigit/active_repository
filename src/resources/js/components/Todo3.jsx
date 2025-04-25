@@ -25,10 +25,8 @@ export default function Todo3(){
     //addfilterの実装
     const addfilter = () => {
         const word = ["plumber", "attire", "bank", "character", "choose"];
-        setTest(tests.filter((_, index) => index !== deleteIndex));
         /*
-        const keyword = '勉強';
-        const result = todos.filter(todo => todo.text.includes(keyword));
+
          */
     }
     return(
