@@ -31,7 +31,7 @@ import React, { useState,useEffect  } from "react";
 
         const deletefilter = () => {
             deleteTest(
-                dtests.filter((dtest,index)=>(dtest !== 'バナナ'))
+                dtests.filter((dtest,index)=>(dtest !== 'いちろう'))
             )
         }
 
@@ -42,6 +42,7 @@ import React, { useState,useEffect  } from "react";
                 <input type="text" value={inputs} onChange={(e) => setInput(e.target.value)}/>
                 <button onClick={addTodo}>追加</button>
                 <button onClick={addfilter}>cがつく特定ワード抽出ボタン</button>
+                <button onClick={deletefilter}>いちろうの文字列を削除する</button>
                 <p>入力された値{inputs}</p>
                 {todos.map((todo, index) => (
                     <li key={index}>
