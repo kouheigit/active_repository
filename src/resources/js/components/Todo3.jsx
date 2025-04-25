@@ -6,9 +6,8 @@ import React, { useState,useEffect  } from "react";
         const [todos, setTodos] = useState([]);
         const [inputs, setInput] = useState('');
         const [tests, setTest] = useState([]);
-        
-        const [dtests,deleteTest] = useState(['いちろう','じろう','さぶろう','しろう']);
 
+        const [dtests,deleteTest] = useState(['いちろう','じろう','さぶろう','しろう']);
 
 
         const addTodo = () => {
@@ -29,6 +28,14 @@ import React, { useState,useEffect  } from "react";
             const result = words.filter(word => word.includes('c'));
             setTest(result);
         }
+
+        const deletefilter = () => {
+            deleteTest(
+                dtests.filter((dtest,index)=>(dtest !== 'バナナ'))
+            )
+        }
+
+    
 
         return (
             <div className="todo3">
