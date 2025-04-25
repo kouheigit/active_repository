@@ -14,8 +14,7 @@ export default function Todo3(){
         setTodos([...todos, { text: inputs,done: false }]);
         setInput('');
     }
-    const deleteTodo = (deleteindex) =>{
-    }
+
     //filter関数について
     //filter関数は指定された値をピックアップする関数
     const numbers = [1,2,3,4,5];
@@ -23,30 +22,27 @@ export default function Todo3(){
     console.log(even);
 
     //addfilterの実装
-    //const addfilter = () => {
-        const word = ["plumber", "attire", "bank", "character", "choose"];
-        const result = words.filter(word=>word.include('c'));
+    const addfilter = () => {
+        const words = ["plumber", "attire", "bank", "character", "choose"];
+        const result = words.filter(word=>word.includes('c'));
         setTest(result);
-   // }
+    }
     return(
      <div className="todo3">
          <input type="text" value={inputs} onChange={(e)=>setInput(e.target.value)}/>
          <button onClick={addTodo}>追加</button>
-         <button onClick={addfilter}>フィルター稼働</button>
+         <button onClick={addfilter}>cがつく特定ワード抽出ボタン</button>
          <p>入力された値{inputs}</p>
          {todos.map((todo,index)=>(
              <li key={index}>
                  <p>{todo.text}</p>
-                 <button onClick={()=>delete(index)}>削除する</button>
              </li>
          ))}
          {tests.map((test,index)=>(
                  <li key={index}>
                      <p>{test}</p>
                  </li>
-             ))
-         }
-
+             ))}
      </div>
     );
 }
