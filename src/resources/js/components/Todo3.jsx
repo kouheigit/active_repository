@@ -6,7 +6,7 @@ export default function Todo3(){
     const [todos,setTodos] = useState([]);
     const[inputs,setInput] = useState('');
 
-    const[tests,setTest] = useState('');
+    const[tests,setTest] = useState([]);
 
 
     const addTodo = ()=>{
@@ -25,7 +25,7 @@ export default function Todo3(){
     //addfilterの実装
     const addfilter = () => {
         const word = ["plumber", "attire", "bank", "character", "choose"];
-        const evens = word.filter()
+        setTest(tests.filter((_, index) => index !== deleteIndex));
         /*
         const keyword = '勉強';
         const result = todos.filter(todo => todo.text.includes(keyword));
