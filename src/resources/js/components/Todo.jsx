@@ -5,7 +5,7 @@ export default function Todo(){
 
     const [todos,setTodos] = useState([]);
     const [inputs,setInput] = useState('');
-    //   const [checks,setCheck] = useState(false);
+    
 
     //値を追加するメソット
     const addTodo = ()=>{
@@ -18,6 +18,7 @@ export default function Todo(){
     const deleteTodo = (deleteIndex) => {
         setTodos(todos.filter((_, index) => index !== deleteIndex));
     };
+
     const toggleCheck = (index) => {
         setTodos(
             todos.map((todo, i) => {
