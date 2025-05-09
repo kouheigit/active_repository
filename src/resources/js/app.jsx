@@ -54,7 +54,7 @@ if(todoElement){
     );
 }
 
-const practice1Element = document.getElementById('react-day1root');
+const practice1Element = document.getElementById('Practice1');
 if(practice1Element){
     const practice1 = ReactDOM.createRoot(practice1Element)
     practice1.render(<Practice1 />)
