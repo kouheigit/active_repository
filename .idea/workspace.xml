@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bc314cd3-654f-4bb9-990f-8ce1e8fd5b8f" name="変更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/js/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/app.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/views/Reacttest/reactpractice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/views/Reacttest/reactpractice.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/js/components/practice/Practice1.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/js/components/practice/Practice1.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -303,7 +302,7 @@
       <workItem from="1745584539195" duration="917000" />
       <workItem from="1745712258319" duration="8000" />
       <workItem from="1746706240269" duration="419000" />
-      <workItem from="1746782429674" duration="2942000" />
+      <workItem from="1746782429674" duration="3668000" />
     </task>
     <servers />
   </component>

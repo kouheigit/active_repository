@@ -1,8 +1,10 @@
-import React,{ useState } from 'react';
+import React,{ useState,useRef } from 'react';
 export default function Practice1(){
+    const inputRef = useRef(null);
     return (
         <div>
-            <h1>Practice1テスト表示</h1>
+            <input ref={inputRef} />
+            <button onClick={() => inputRef.current.focus()}>フォーカスする</button>
         </div>
     )
 }
