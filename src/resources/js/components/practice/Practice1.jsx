@@ -10,10 +10,11 @@ export default function Practice1(){
     return (
         <div>
             <b>inputRef</b>
-            <input ref={inputRef} />
+            <input ref={inputRef} type="text"/>
             <button onClick={() => inputRef.current.focus()}>フォーカスする</button>
             <b>inputRef1</b>
-
+            <input ref={inputRef1} type="text"/>
+            <button onClick={(handleforcus)}>フォーカスする</button>
         </div>
     )
 }
