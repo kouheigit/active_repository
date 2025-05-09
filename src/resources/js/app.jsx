@@ -21,6 +21,7 @@ import Todo1 from './components/Todo1'
 import Todo2 from './components/Todo2'
 import Todo3 from './components/Todo3'
 import Todo3 from './components/Todo4'
+import Practice1 from './components/practice/Practice1'
 
 
 //$test = new test();クラスのインスタンス化
@@ -53,6 +54,11 @@ if(todoElement){
     );
 }
 
+const practice1Element = document.getElementById('react-day1root');
+if(practice1Element){
+    const practice1 = ReactDOM.createRoot(practice1Element)
+    practice1.render(<Practice1 />)
+}
 
 
 
