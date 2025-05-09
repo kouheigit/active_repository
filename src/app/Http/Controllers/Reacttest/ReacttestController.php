@@ -21,4 +21,8 @@ class ReacttestController extends Controller
     {
         return view('reacttest.todo');
     }
+    public function reactpractice(Request $request)
+    {
+        return view('reacttest.reactpractice');
+    }
 }
