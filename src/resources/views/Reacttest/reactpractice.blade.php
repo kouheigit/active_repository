@@ -6,7 +6,7 @@
     <title>React-practice</title>
 </head>
 <body>
-<div id="react-practice">
+<div id="Practice1">
     @vite('resources/js/app.jsx')
 </div>
 </body>

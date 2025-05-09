@@ -20,7 +20,7 @@ import Todo from './components/Todo'
 import Todo1 from './components/Todo1'
 import Todo2 from './components/Todo2'
 import Todo3 from './components/Todo3'
-import Todo3 from './components/Todo4'
+import Todo4 from './components/Todo4'
 import Practice1 from './components/practice/Practice1'
 
 
