@@ -1,4 +1,4 @@
-<h1>TODOリスト</h1>
+<h1>React練習</h1>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
