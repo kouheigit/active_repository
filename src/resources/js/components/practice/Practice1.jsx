@@ -18,3 +18,23 @@ export default function Practice1(){
         </div>
     )
 }
+/*
+import React, { useState, useMemo } from 'react';
+
+export default function HeavyList() {
+  const [numbers] = useState([1, 2, 3, 4, 5, 6]);
+  const [count, setCount] = useState(0);
+
+  const evenNumbers = useMemo(() => {
+    console.log('偶数だけ抽出しています...');
+    return numbers.filter(n => n % 2 === 0);
+  }, [numbers]);
+
+  return (
+    <div>
+      <p>偶数: {evenNumbers.join(', ')}</p>
+      <button onClick={() => setCount(count + 1)}>カウントアップ：{count}</button>
+    </div>
+  );
+}
+ */
