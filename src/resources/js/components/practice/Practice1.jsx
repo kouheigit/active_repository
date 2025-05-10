@@ -15,11 +15,7 @@ export default function Practice1(){
         console.log('偶数だけ抽出してます....');
         return numbers.filter(n => n % 2 === 0);
     },[numbers]);
-    /*
-    const evenNumbers = useMemo(() => {
-        console.log('偶数だけ抽出しています...');
-        return numbers.filter(n => n % 2 === 0);
-    }, [numbers]);*/
+
 
 
 
