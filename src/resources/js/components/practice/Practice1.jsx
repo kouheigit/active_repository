@@ -10,9 +10,10 @@ export default function Practice1(){
     const handleforcus = () =>{
         inputRef1.current.focus();
     }
+
     const evenNumbers = useMemo(()=>{
         console.log('偶数だけ抽出してます....');
-        return numbers.filete(n => n % 2 === 0);
+        return numbers.filter(n => n % 2 === 0);
     },[numbers]);
     /*
     const evenNumbers = useMemo(() => {
@@ -30,6 +31,7 @@ export default function Practice1(){
             <b>inputRef1</b>
             <input ref={inputRef1} type="text"/>
             <button onClick={(handleforcus)}>フォーカスする</button>
+
             <p>偶数: {evenNumbers.join(', ')}</p>
             <button onClick={() => setCount(count + 1)}>カウントアップ：{count}</button>
         </div>
