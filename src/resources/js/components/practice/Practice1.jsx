@@ -1,14 +1,20 @@
 import React,{ useState,useRef,useMemo } from 'react';
-export default function Practice1(){
+export default function Practice1() {
 
-    const [numbers] = useState([1,2,3,4,5,6]);
-    const[count,setCount] = useState(0);
+    const [numbers] = useState([1, 2, 3, 4, 5, 6]);
+    const [count, setCount] = useState(0);
+    const [selectCount] = UseState(0);
+    //	inputCount	setInputCount
+
 
     const inputRef = useRef(null);
     const inputRef1 = useRef(null);
 
-    const handleforcus = () =>{
+    const handleforcus = () => {
         inputRef1.current.focus();
+    }
+    const selectNumbers = () =>{
+
     }
 
     const evenNumbers = useMemo(()=>{
@@ -18,18 +24,18 @@ export default function Practice1(){
 
 
 
-
     return (
         <div>
-            <b>inputRef</b>
+            <b>inputRef処理</b>
             <input ref={inputRef} type="text"/>
             <button onClick={() => inputRef.current.focus()}>フォーカスする</button>
-            <b>inputRef1</b>
+            <b>inputRef1処理</b>
             <input ref={inputRef1} type="text"/>
             <button onClick={(handleforcus)}>フォーカスする</button>
-
+            <p>useMemoの処理</p>
             <p>偶数: {evenNumbers.join(', ')}</p>
             <button onClick={() => setCount(count + 1)}>カウントアップ：{count}</button>
+
         </div>
     )
 }
