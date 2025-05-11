@@ -3,7 +3,7 @@ export default function Practice1() {
 
     const [numbers] = useState([1, 2, 3, 4, 5, 6]);
     const [count, setCount] = useState(0);
-    const [selectCount] = UseState(0);
+    const [select,selectCount] = UseState(0);
     //	inputCount	setInputCount
 
 
