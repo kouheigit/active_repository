@@ -3,7 +3,6 @@ export default function Practice1() {
 
     const [numbers] = useState([1, 2, 3, 4, 5, 6]);
     const [count, setCount] = useState(0);
-    const [select,selectCount] = useState([]);
     //	inputCount	setInputCount
 
 
@@ -12,12 +11,6 @@ export default function Practice1() {
 
     const handleforcus = () => {
         inputRef1.current.focus();
-    }
-    const selectNumbers = () =>{
-        const number = select.length + 1;
-        const selectarray = [...select,number];
-        const selectans = selectarray.filter(n => n % 2 === 0);
-        selectCount(selectans);
     }
 
     const evenNumbers = useMemo(()=>{
@@ -38,10 +31,6 @@ export default function Practice1() {
             <p>useMemoの処理</p>
             <p>偶数: {evenNumbers.join(', ')}</p>
             <button onClick={() => setCount(count + 1)}>カウントアップ：{count}</button>
-
-            <p>入力された数字（偶数のみ保存）</p>
-            <p>{select.join(', ')}</p>
-            <button onClick={selectNumbers}>追加する</button>
 
        </div>
     )
