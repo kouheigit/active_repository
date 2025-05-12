@@ -14,8 +14,6 @@ export default function Practice1() {
         inputRef1.current.focus();
     }
     const selectNumbers = () =>{
-        select + 1;
-        selectCount(select.filter(n => n % 2 === 0));
     }
 
     const evenNumbers = useMemo(()=>{
