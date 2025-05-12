@@ -14,6 +14,7 @@ export default function Practice1() {
         inputRef1.current.focus();
     }
     const selectNumbers = () =>{
+        
     }
 
     const evenNumbers = useMemo(()=>{
