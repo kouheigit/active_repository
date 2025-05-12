@@ -3,9 +3,10 @@ export default function Practice1() {
 
     const [numbers] = useState([1, 2, 3, 4, 5, 6]);
     const [count, setCount] = useState(0);
-    //	inputCount	setInputCount
 
-
+    const[latestNumber,setLatestNumber] = useState(null);
+    const[setNumbers,setEvenNumbers] = useState([]);
+    
     const inputRef = useRef(null);
     const inputRef1 = useRef(null);
 
