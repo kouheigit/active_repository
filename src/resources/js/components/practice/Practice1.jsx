@@ -14,6 +14,7 @@ export default function Practice1() {
         inputRef1.current.focus();
     }
     const selectNumbers = () =>{
+        select + 1;
         setCount(select.filter(n => n % 2 === 0));
     }
 
@@ -36,7 +37,9 @@ export default function Practice1() {
             <p>偶数: {evenNumbers.join(', ')}</p>
             <button onClick={() => setCount(count + 1)}>カウントアップ：{count}</button>
             <p>入力された文字から偶数だけ出力する</p>
-            <button onClick={()=>selectCount(select + 1)}>カウントする:{select}回</button>
+            <p>{select}</p>
+            <button onClick={() => selectNumbers()}>追加する</button>
+            
         </div>
     )
 }
