@@ -42,7 +42,7 @@ export default function Practice1() {
             <p>入力された数字（偶数のみ保存）</p>
             <p>{select.join(', ')}</p>
             <button onClick={selectNumbers}>追加する</button>
-            
+
        </div>
     )
 }
