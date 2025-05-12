@@ -35,7 +35,8 @@ export default function Practice1() {
             <p>useMemoの処理</p>
             <p>偶数: {evenNumbers.join(', ')}</p>
             <button onClick={() => setCount(count + 1)}>カウントアップ：{count}</button>
-
+            <p>入力された文字から偶数だけ出力する</p>
+            <button onClick={()=>selectCount(select + 1)}>カウントする:{select}回</button>
         </div>
     )
 }
