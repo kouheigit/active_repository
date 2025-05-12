@@ -3,7 +3,7 @@ export default function Practice1() {
 
     const [numbers] = useState([1, 2, 3, 4, 5, 6]);
     const [count, setCount] = useState(0);
-    const [select,selectCount] = UseState(0);
+    const [select,selectCount] = useState([]);
     //	inputCount	setInputCount
 
 
@@ -15,7 +15,7 @@ export default function Practice1() {
     }
     const selectNumbers = () =>{
         select + 1;
-        setCount(select.filter(n => n % 2 === 0));
+        selectCount(select.filter(n => n % 2 === 0));
     }
 
     const evenNumbers = useMemo(()=>{
@@ -39,7 +39,6 @@ export default function Practice1() {
             <p>入力された文字から偶数だけ出力する</p>
             <p>{select}</p>
             <button onClick={() => selectNumbers()}>追加する</button>
-            
         </div>
     )
 }
