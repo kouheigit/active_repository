@@ -14,7 +14,10 @@ export default function Practice1() {
         inputRef1.current.focus();
     }
     const selectNumbers = () =>{
-        
+        const number = select.length + 1;
+        const selectarray = [...select,number];
+        const selectans = selectarray.filter(n => n % 2 === 0);
+        selectCount(selectans);
     }
 
     const evenNumbers = useMemo(()=>{
@@ -35,10 +38,15 @@ export default function Practice1() {
             <p>useMemoの処理</p>
             <p>偶数: {evenNumbers.join(', ')}</p>
             <button onClick={() => setCount(count + 1)}>カウントアップ：{count}</button>
-            <p>入力された文字から偶数だけ出力する</p>
-            <p>{select}</p>
-            <button onClick={() => selectNumbers()}>追加する</button>
-        </div>
+
+            <p>入力された数字（偶数のみ保存）</p>
+            <p>{select.join(', ')}</p>
+            <button onClick={selectNumbers}>追加する</button>
+            <p>出力される文字</p>
+            {selectCount((value,i)=>(
+                <p>{value}</p>
+            ))}
+      「 </div>
     )
 }
 
