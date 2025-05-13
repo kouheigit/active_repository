@@ -3,6 +3,7 @@ export default function Practice1() {
 
     const [numbers] = useState([1, 2, 3, 4, 5, 6]);
     const [count, setCount] = useState(0);
+    const [setNumbers,setCountNumber] = useState(0);
 
     /*
     const[latestNumber,setLatestNumber] = useState(null);
