@@ -4,7 +4,7 @@ export default function Practice1() {
     const [numbers] = useState([1, 2, 3, 4, 5, 6]);
     const [count, setCount] = useState(0);
 
-/*
+    /*
     const[latestNumber,setLatestNumber] = useState(null);
     const[setNumbers,setEvenNumbers] = useState([]);*/
 
@@ -19,6 +19,12 @@ export default function Practice1() {
         console.log('偶数だけ抽出してます....');
         return numbers.filter(n => n % 2 === 0);
     },[numbers]);
+
+    const selectNumbers =()=>{
+        /*
+
+         */
+    }
 /*
     const selectNumbers =()=>{
         const number = setNumbers.length + 1;
