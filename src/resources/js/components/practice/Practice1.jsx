@@ -25,6 +25,7 @@ export default function Practice1() {
         const next = selectNumbers.length + 1;
         setSelectNumbers([...selectNumbers,next]);
     }
+    const eveSelectNumbers = useMemo(()=>selectNumbers.filter(n=>n % 2 === 0),[selectNumbers]);
 
 /*
     const selectNumbers =()=>{
@@ -52,6 +53,7 @@ export default function Practice1() {
 
             <p>加算メソット</p>
             <p>{selectNumbers.at(-1)}</p>
+            <p>偶数{eveSelectNumbers.join(', ')}</p>
             <button onClick={addNumber}>追加</button>
 
 
