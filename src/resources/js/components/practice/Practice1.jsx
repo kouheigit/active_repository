@@ -22,11 +22,11 @@ export default function Practice1() {
         return numbers.filter(n => n % 2 === 0);
     },[numbers]);
 
-    /*
+    
     const selectNumbers =()=>{
 
-    }*/
-    
+    }
+
 /*
     const selectNumbers =()=>{
         const number = setNumbers.length + 1;
@@ -52,7 +52,6 @@ export default function Practice1() {
             <button onClick={() => setCount(count + 1)}>カウントアップ：{count}</button>
 
             <p>加算メソット</p>
-            countNumbers,setCountNumber
             <button onClick={()=>setCountNumber(countNumbers + 1)}>カウント{countNumbers}</button>
             {/*
             setNumbers,setCountNumber
