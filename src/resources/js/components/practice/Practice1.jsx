@@ -41,10 +41,7 @@ export default function Practice1() {
             <p>useMemoの処理</p>
             <p>偶数: {evenNumbers.join(', ')}</p>
             <button onClick={() => setCount(count + 1)}>カウントアップ：{count}</button>
-
-            <button onClick={selectNumbers}>追加する</button>
-            <p>追加された number: {latestNumber}</p>
-            <p>偶数のみ: {evenNumbers.join(', ')}</p>
+            
 
             <button onClick={selectNumbers}>追加する</button>
             <p>数値{latestNumber}</p>
