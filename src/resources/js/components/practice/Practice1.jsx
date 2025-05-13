@@ -4,9 +4,9 @@ export default function Practice1() {
     const [numbers] = useState([1, 2, 3, 4, 5, 6]);
     const [count, setCount] = useState(0);
 
-
+/*
     const[latestNumber,setLatestNumber] = useState(null);
-    const[setNumbers,setEvenNumbers] = useState([]);
+    const[setNumbers,setEvenNumbers] = useState([]);*/
 
     const inputRef = useRef(null);
     const inputRef1 = useRef(null);
@@ -19,7 +19,7 @@ export default function Practice1() {
         console.log('偶数だけ抽出してます....');
         return numbers.filter(n => n % 2 === 0);
     },[numbers]);
-
+/*
     const selectNumbers =()=>{
         const number = setNumbers.length + 1;
         const update = [...setNumbers,number];
@@ -28,7 +28,7 @@ export default function Practice1() {
         setLatestNumber(number);
         //フィルターされた値
         setEvenNumbers(filtered);
-    }
+    }*/
 
     return (
         <div>
@@ -41,7 +41,7 @@ export default function Practice1() {
             <p>useMemoの処理</p>
             <p>偶数: {evenNumbers.join(', ')}</p>
             <button onClick={() => setCount(count + 1)}>カウントアップ：{count}</button>
-            
+
 
             <button onClick={selectNumbers}>追加する</button>
             <p>数値{latestNumber}</p>
