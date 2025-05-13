@@ -48,10 +48,10 @@ export default function Practice1() {
             <p>偶数: {evenNumbers.join(', ')}</p>
             <button onClick={() => setCount(count + 1)}>カウントアップ：{count}</button>
 
-
+            {/*
             <button onClick={selectNumbers}>追加する</button>
             <p>数値{latestNumber}</p>
-            <p>偶数{setNumbers.join(', ')}</p>
+            <p>偶数{setNumbers.join(', ')}</p>*/}
        </div>
     )
 }
