@@ -3,10 +3,9 @@ export default function Practice1() {
 
     const [numbers] = useState([1, 2, 3, 4, 5, 6]);
     const [count, setCount] = useState(0);
-
     const[latestNumber,setLatestNumber] = useState(null);
     const[setNumbers,setEvenNumbers] = useState([]);
-    
+
     const inputRef = useRef(null);
     const inputRef1 = useRef(null);
 
@@ -19,7 +18,13 @@ export default function Practice1() {
         return numbers.filter(n => n % 2 === 0);
     },[numbers]);
 
-
+    const selectNumbers =()=>{
+        /*
+        number
+        update
+        filtered
+         */
+    }
 
     return (
         <div>
@@ -33,6 +38,12 @@ export default function Practice1() {
             <p>偶数: {evenNumbers.join(', ')}</p>
             <button onClick={() => setCount(count + 1)}>カウントアップ：{count}</button>
 
+            <button onClick={selectNumbers}>追加する</button>
+            <p>追加された number: {latestNumber}</p>
+            <p>偶数のみ: {evenNumbers.join(', ')}</p>
+
+            <button onClick={selectNumbers}>追加する</button>
+            <p>数値{latestNumber}</p>
        </div>
     )
 }
