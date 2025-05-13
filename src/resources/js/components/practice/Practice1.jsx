@@ -3,6 +3,8 @@ export default function Practice1() {
 
     const [numbers] = useState([1, 2, 3, 4, 5, 6]);
     const [count, setCount] = useState(0);
+
+
     const[latestNumber,setLatestNumber] = useState(null);
     const[setNumbers,setEvenNumbers] = useState([]);
 
@@ -19,11 +21,13 @@ export default function Practice1() {
     },[numbers]);
 
     const selectNumbers =()=>{
-        /*
-        number
-        update
-        filtered
-         */
+        const number = setNumbers.length + 1;
+        const update = [...setNumbers,number];
+        const filtered = update.filter(n => n % 2 ===0);
+        //現在の値
+        setLatestNumber(number);
+        //フィルターされた値
+        setEvenNumbers(filtered);
     }
 
     return (
