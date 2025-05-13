@@ -23,9 +23,7 @@ export default function Practice1() {
 
     const addNumber　= () =>{
         const next = selectNumbers.length + 1;
-        const next1 = ([...selectNumbers, next]);
-        const next2 = next1[next1.length - 1];
-        setSelectNumbers(next2);
+        setSelectNumbers([...selectNumbers,next]);
     }
 
 /*
@@ -53,7 +51,7 @@ export default function Practice1() {
             <button onClick={() => setCount(count + 1)}>カウントアップ：{count}</button>
 
             <p>加算メソット</p>
-            <p>最新: {selectNumbers}</p>
+            <p>{selectNumbers.at(-1)}</p>
             <button onClick={addNumber}>追加</button>
 
 
