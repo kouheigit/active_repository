@@ -26,7 +26,7 @@ export default function Practice1() {
 
     const selectNumbers =()=>{
         const filtered = countNumbers.filter(n => n % 2 === 0);
-
+        setExtraction(filtered);
     }
 
 /*
@@ -54,6 +54,7 @@ export default function Practice1() {
             <button onClick={() => setCount(count + 1)}>カウントアップ：{count}</button>
 
             <p>加算メソット</p>
+            <p>偶数: {extractions.join(', ')}</p>
             <button onClick={()=>setCountNumber(countNumbers + 1)}>カウント{countNumbers}</button>
             {/*
             setNumbers,setCountNumber
