@@ -3,7 +3,7 @@ export default function Practice1() {
 
     const [numbers] = useState([1, 2, 3, 4, 5, 6]);
     const [count, setCount] = useState(0);
-
+    const[selectNumbers,setSelectNumbers] = useState([]);
 
     /*
     const[latestNumber,setLatestNumber] = useState(null);
@@ -20,7 +20,6 @@ export default function Practice1() {
         console.log('偶数だけ抽出してます....');
         return numbers.filter(n => n % 2 === 0);
     },[numbers]);
-
 
 
 /*
