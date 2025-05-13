@@ -3,7 +3,8 @@ export default function Practice1() {
 
     const [numbers] = useState([1, 2, 3, 4, 5, 6]);
     const [count, setCount] = useState(0);
-    const [setNumbers,setCountNumber] = useState(0);
+    //新たに作成したカウントState
+    const [countNumbers,setCountNumber] = useState(0);
 
     /*
     const[latestNumber,setLatestNumber] = useState(null);
@@ -21,11 +22,11 @@ export default function Practice1() {
         return numbers.filter(n => n % 2 === 0);
     },[numbers]);
 
+    /*
     const selectNumbers =()=>{
-        /*
 
-         */
-    }
+    }*/
+    
 /*
     const selectNumbers =()=>{
         const number = setNumbers.length + 1;
@@ -45,11 +46,17 @@ export default function Practice1() {
             <b>inputRef1処理</b>
             <input ref={inputRef1} type="text"/>
             <button onClick={(handleforcus)}>フォーカスする</button>
+
             <p>useMemoの処理</p>
             <p>偶数: {evenNumbers.join(', ')}</p>
             <button onClick={() => setCount(count + 1)}>カウントアップ：{count}</button>
 
+            <p>加算メソット</p>
+            countNumbers,setCountNumber
+            <button onClick={()=>setCountNumber(countNumbers + 1)}>カウント{countNumbers}</button>
             {/*
+            setNumbers,setCountNumber
+
             <button onClick={selectNumbers}>追加する</button>
             <p>数値{latestNumber}</p>
             <p>偶数{setNumbers.join(', ')}</p>*/}
