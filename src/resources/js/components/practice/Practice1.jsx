@@ -51,7 +51,7 @@ export default function Practice1() {
             <button onClick={() => setCount(count + 1)}>カウントアップ：{count}</button>
 
             <p>加算メソット</p>
-            <p>全体: {numbers.join(', ')}</p>
+            <p>全体: {selectNumbers.join(', ')}</p>
             <button onClick={addNumber}>追加</button>
 
 
