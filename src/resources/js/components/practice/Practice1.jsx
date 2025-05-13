@@ -48,6 +48,7 @@ export default function Practice1() {
 
             <button onClick={selectNumbers}>追加する</button>
             <p>数値{latestNumber}</p>
+            <p>偶数{setNumbers.join(', ')}</p>
        </div>
     )
 }
