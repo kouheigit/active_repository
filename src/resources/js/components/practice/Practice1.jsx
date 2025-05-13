@@ -5,6 +5,7 @@ export default function Practice1() {
     const [count, setCount] = useState(0);
     //新たに作成したカウントState
     const [countNumbers,setCountNumber] = useState(0);
+    const [extractions,setExtraction] = useState([]);
 
     /*
     const[latestNumber,setLatestNumber] = useState(null);
@@ -22,8 +23,9 @@ export default function Practice1() {
         return numbers.filter(n => n % 2 === 0);
     },[numbers]);
 
-    
+
     const selectNumbers =()=>{
+        const filtered = countNumbers.filter(n => n % 2 === 0);
 
     }
 
